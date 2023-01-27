@@ -1,0 +1,45 @@
+table {
+    border:1px solid #7f8287;
+    background-color: darkslategray;
+    
+    
+  }
+  td {
+    border:1px solid #7f8287;
+    background-color: darkslategray;
+    color: #7f8287;
+    font-family:courier;
+    
+  }
+  th {
+    border:1px solid #7f8287;
+    background-color: darkslategray;
+    color: #7f8287;
+    font: bold;
+    font-family:verdana;
+    text-align:center;
+  }
+  body{
+      background-color: #1f2021;
+  
+  }
+  h1{
+      color: #7f8287;
+  }
+  p{
+      color: #7f8287;
+  }
+  a{
+      color: #7f8287;
+  }
+  textarea{
+      border:1px solid #7f8287;
+    background-color: darkslategray;
+    color: #7f8287;
+    font-family:courier;
+    
+  }
+  img{
+      border: 0px;
+      
+  }
