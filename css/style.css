@@ -77,6 +77,13 @@ table {
     border-radius: 50%;
   }
   
+  .photo{
+    border: 0px;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+  }
+
   .text {
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 20px;
