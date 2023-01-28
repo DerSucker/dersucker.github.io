@@ -14,6 +14,7 @@ table {
     background-color: darkslategray;
     color: #7f8287;
     font-family:courier;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     
   }
   th {
@@ -23,6 +24,7 @@ table {
     font: bold;
     font-family:verdana;
     text-align:center;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   }
   
   body{
@@ -35,9 +37,11 @@ table {
   }
   h2{
     color: #7f8287;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
   h3{
     color: #7f8287;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
   p{
       color: #7f8287;
@@ -57,6 +61,14 @@ table {
       border: 0px;
       max-width: 100%;
       max-height: 100%;
+      border-radius: 8px;
+  }
+
+  .working{
+    border: 0px;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
   }
   
   .text {
@@ -71,6 +83,19 @@ table {
     font-variant: small-caps;
     text-transform: capitalize;
     max-width: 95%;
+  }
+
+  .logo{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 45px;
+    letter-spacing: 0.6px;
+    word-spacing: 2px;
+    color: #7f8287;
+    font-weight: 700;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: capitalize;
   }
 
   .code {
