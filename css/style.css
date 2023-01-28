@@ -1,5 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=Seaweed+Script);
-@import url(http://fonts.googleapis.com/css?family=Arvo:700);
+/*
+    https://html-css-js.com/css/generator/font/
+*/
+
 
 table {
     border:1px solid #7f8287;
@@ -22,6 +24,7 @@ table {
     font-family:verdana;
     text-align:center;
   }
+  
   body{
       background-color: #1f2021;
   
@@ -54,25 +57,16 @@ table {
       max-width: 100%;
       max-height: 100%;
   }
-  .shadow {
-    color: #fff;
-    font-family: Arvo;
-    font-weight: bold;
-    text-shadow:
-      -3px -3px 0 #222,
-      3px -3px 0 #222,
-      -3px 3px 0 #222,
-      3px 3px 0 #222,
-      4px 4px 0 #fff,
-      5px 5px 0 #fff,
-      6px 6px 0 #fff,
-      7px 7px 0 #fff;
-    line-height: 0.8em;
-    letter-spacing: 0.1em;
-    transform: scaleY(0.7);
-    -webkit-transform: scaleY(0.7);
-    -moz-transform: scaleY(0.7);
-    margin:0;
-    text-align: center;
-    font-size:300%;
+  
+  .text {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 20px;
+    letter-spacing: 0.6px;
+    word-spacing: 2px;
+    color: #BEBEBE;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: oblique;
+    font-variant: small-caps;
+    text-transform: capitalize;
   }
