@@ -50,6 +50,7 @@ table {
     background-color: darkslategray;
     color: #7f8287;
     font-family:courier;
+
     
   }
   img{
@@ -69,4 +70,27 @@ table {
     font-style: oblique;
     font-variant: small-caps;
     text-transform: capitalize;
+    max-width: 95%;
   }
+
+  .code {
+    /*
+    background: #f4f4f4;
+    */
+    background: #4c4f4d;
+    border: 1px solid #ddd;
+    border-left: 3px solid #f36d33;
+    color: #BEBEBE;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 95%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+    text-align: left;
+}
+
