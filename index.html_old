@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Martin Sucker
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Website from Martin Sucker">
+    <meta name="keywords" content="Martin, Sucker, Martin Sucker">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="canonical" href="https://www.martinsucker.de/">
+</head>
+<frameset rows='10%,*' border='1'  frameborder='0' framespacing='0'>
+  
+  <frame src='top.html' name='top' marginwidth='0' marginheight='0' scrolling='auto' noresize>
+  <frameset cols='20%,*' border='1' frameborder='0' framespacing='0'>
+  <frame src='left.html' name='left' marginwidth='0' marginheight='0' scrolling='auto'>
+  <frame src='main.html' name='main' marginwidth='0' marginheight='0' scrolling='auto' noresize>
+  </frameset>
+  <noframes>
+  
+  </noframes>
+  </frameset>
+</html>
