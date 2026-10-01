@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Martin Sucker – IT-Consultant End User Computing</title>
+<meta name="description" content="Martin Sucker, IT-Consultant für End User Computing. Schwerpunkt Microsoft- und Citrix-Technologien, Azure Solutions Architect und Citrix Expert.">
+<meta name="author" content="Martin Sucker">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0a0c14">
+<link rel="canonical" href="https://www.martinsucker.de/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Martin Sucker – IT-Consultant End User Computing">
+<meta property="og:description" content="Microsoft, Citrix, Azure und Automation: die Webseite von Martin Sucker.">
+<meta property="og:url" content="https://www.martinsucker.de/">
+<meta property="og:image" content="https://www.martinsucker.de/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0c14'/%3E%3Ctext x='26' y='45' font-family='Courier New,monospace' font-size='40' font-weight='bold' text-anchor='middle' fill='%2300f0ff'%3EM%3C/text%3E%3Crect x='46' y='24' width='8' height='22' fill='%23ff2bd6'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+:root{
+  --bg:#0a0c14; --card:#121626; --line:#262c47; --text:#d9deef; --muted:#8b93b3;
+  --neon1:#00f0ff; --neon2:#ff2bd6; --glow:0 0 6px var(--neon1),0 0 18px rgba(0,240,255,.55);
+  --glow2:0 0 6px var(--neon2),0 0 18px rgba(255,43,214,.5);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+:root[data-theme="light"]{
+  --bg:#f3f4fa; --card:#ffffff; --line:#d5d9ec; --text:#1b2033; --muted:#555d7e;
+  --neon1:#0077c8; --neon2:#c0109d; --glow:0 0 1px rgba(0,119,200,.6),0 0 10px rgba(0,119,200,.3);
+  --glow2:0 0 1px rgba(192,16,157,.6),0 0 10px rgba(192,16,157,.25);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Special Elite','American Typewriter','Courier New',Courier,monospace;line-height:1.65;min-height:100vh;display:flex;flex-direction:column;transition:background .3s,color .3s}
+.wrap{width:100%;max-width:760px;margin:0 auto;padding:1.25rem 1.25rem 2rem;flex:1}
+.top{display:flex;justify-content:flex-end;gap:.5rem}
+button.mode{font:inherit;font-size:.9rem;color:var(--text);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:.45rem 1rem;cursor:pointer}
+button.mode:hover{border-color:var(--neon1)}
+:focus-visible{outline:2px solid var(--neon1);outline-offset:3px}
+header{padding:3rem 0 2rem}
+h1{font-weight:400;font-size:clamp(2.2rem,8vw,3.6rem);line-height:1.1;margin:0 0 .75rem;color:var(--neon1);text-shadow:var(--glow)}
+.role{font-size:1.15rem;color:var(--text);margin:0}
+.cursor{display:inline-block;width:.55em;height:1.05em;background:var(--neon2);vertical-align:-.15em;margin-left:.2em;box-shadow:var(--glow2);animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+h2{font-weight:400;font-size:1.4rem;margin:0 0 .9rem;color:var(--neon2);text-shadow:var(--glow2)}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.4rem;margin-bottom:1.1rem}
+ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.6rem}
+li{border:1px solid var(--line);border-radius:8px;padding:.35rem .8rem;font-size:.95rem}
+p{margin:0;max-width:62ch}
+a{color:var(--neon1)}
+footer{text-align:center;padding:1.2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.svc{display:grid;gap:1rem}
+.svc>div{border-left:2px solid var(--neon1);padding-left:.9rem}
+.svc strong{font-weight:400;color:var(--neon1)}
+.svc p{font-size:.92rem;color:var(--muted)}
+.cloud{justify-content:center;align-items:baseline;gap:.5rem 1.5rem;padding:.4rem 0}
+.cloud li{border:0;padding:0;line-height:1.2}
+.cloud .s1{font-size:1.05rem}
+.cloud .s2{font-size:1.5rem}
+.cloud .s3{font-size:2.2rem}
+.cloud .c1{color:var(--neon1);text-shadow:var(--glow)}
+.cloud .c2{color:var(--neon2);text-shadow:var(--glow2)}
+.cursor{cursor:pointer}
+.term{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(1rem + env(safe-area-inset-bottom,0px));width:min(640px,calc(100% - 1.5rem));max-height:60vh;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--neon1);border-radius:12px;box-shadow:var(--glow);z-index:50;font-size:.92rem}
+.term[hidden]{display:none}
+.tbar{display:flex;justify-content:space-between;align-items:center;padding:.4rem .8rem;border-bottom:1px solid var(--line);color:var(--neon1)}
+.tbar .mode{padding:.1rem .6rem}
+.tout{overflow-y:auto;padding:.6rem .8rem;flex:1;min-height:5rem}
+.tout div{white-space:pre-wrap;word-break:break-word}
+.tline{display:flex;gap:.5rem;padding:.5rem .8rem;border-top:1px solid var(--line);color:var(--neon2)}
+.tline:focus-within{box-shadow:inset 0 0 0 1px var(--neon2);border-radius:0 0 11px 11px}
+.tline input{flex:1;min-width:0;background:transparent;border:0;color:var(--text);font:inherit;font-size:16px;outline:none}
+#mx{position:fixed;inset:0;width:100%;height:100%;z-index:100;background:#000;cursor:pointer}
+#mx[hidden]{display:none}
+.imp{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease}
+.imp.open{grid-template-rows:1fr}
+.imp>div{overflow:hidden;min-height:0}
+.imp-inner{text-align:left;max-width:760px;margin:0 auto;padding-top:1.4rem;color:var(--text)}
+.imp-inner h2{font-size:1.5rem}
+.imp-inner h3{font-weight:400;font-size:1.05rem;margin:1.3rem 0 .35rem;color:var(--neon1);text-shadow:var(--glow)}
+.imp-inner p{font-size:.92rem;margin:0 0 .4rem}
+.ph{color:var(--neon2);border-bottom:1px dashed var(--neon2)}
+.btns{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-top:.8rem}
+.game-inner{max-width:420px;margin:0 auto;padding-top:1.4rem}
+.ghud{display:flex;justify-content:space-between;margin-bottom:.5rem;color:var(--neon1);text-shadow:var(--glow)}
+#cv{display:block;width:100%;height:auto;background:var(--bg);border:1px solid var(--line);border-radius:10px;touch-action:none}
+.pad{display:grid;grid-template-columns:repeat(3,56px);grid-template-rows:repeat(2,46px);gap:6px;justify-content:center;margin:.9rem 0 .6rem}
+.pad .mode{padding:0}
+.pad [data-d="0,-1"]{grid-column:2;grid-row:1}
+.pad [data-d="-1,0"]{grid-column:1;grid-row:2}
+.pad [data-d="0,1"]{grid-column:2;grid-row:2}
+.pad [data-d="1,0"]{grid-column:3;grid-row:2}
+@media (prefers-reduced-motion:reduce){.cursor{animation:none}.imp{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><button class="mode" id="mode" type="button" aria-label="Design wechseln">☀ Lightmode</button><button class="mode" id="lang" type="button" aria-label="Sprache wechseln / Switch language">English</button></div>
+  <header>
+    <h1>Martin Sucker<span class="cursor" aria-hidden="true"></span></h1>
+    <p class="role">IT-Consultant für End User Computing</p>
+  </header>
+  <section>
+    <h2>Kurzprofil</h2>
+    <p>Ich bin IT-Consultant für End User Computing und unterstütze bei Planung und Betrieb moderner Arbeitsplätze. Mein Schwerpunkt liegt auf Microsoft- und Citrix-Technologien, von virtuellen Desktops und Anwendungen bis zur Verwaltung von Endgeräten.</p>
+  </section>
+  <section>
+    <h2>Schwerpunkte</h2>
+    <div class="svc">
+      <div><strong>Architektur und Design</strong><p>Konzepte für virtuelle Desktops und Anwendungen mit Azure und Citrix.</p></div>
+      <div><strong>Migration</strong><p>Umzug bestehender Umgebungen in die Cloud oder auf neue Plattformen.</p></div>
+      <div><strong>Optimierung und Troubleshooting</strong><p>Analyse von Performance, Anmeldezeiten und Störungen.</p></div>
+      <div><strong>Automatisierung</strong><p>Wiederkehrende Aufgaben in Bereitstellung und Betrieb automatisieren.</p></div>
+      <div><strong>Workshops</strong><p>Wissenstransfer zu Microsoft- und Citrix-Themen.</p></div>
+    </div>
+  </section>
+  <section>
+    <h2>Werdegang</h2>
+    <div class="svc">
+      <div><strong>08/2026 – heute</strong><p>PROACT GmbH</p></div>
+      <div><strong>04/2026 – 07/2026</strong><p>Worksimple GmbH</p></div>
+      <div><strong>04/2015 – 03/2026</strong><p>sepago GmbH</p></div>
+      <div><strong>08/2006 – 03/2015</strong><p>COMDOK GmbH</p></div>
+    </div>
+  </section>
+  <section>
+    <h2>Themen</h2>
+    <ul class="cloud">
+      <li class="s3 c1">AVD</li>
+      <li class="s2 c2">Citrix</li>
+      <li class="s2 c1">Windows 365</li>
+      <li class="s3 c2">Intune</li>
+      <li class="s1 c1">SCCM</li>
+      <li class="s2 c2">PowerShell</li>
+      <li class="s2 c1">Automation</li>
+      <li class="s3 c2">Azure</li>
+      <li class="s2 c1">M365</li>
+      <li class="s2 c2">Migration</li>
+      <li class="s3 c1">Virtual Desktop</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Zertifizierungen</h2>
+    <ul>
+      <li>Microsoft Certified: Azure Administrator Associate</li>
+      <li>Microsoft Certified: Azure Solutions Architect Expert</li>
+      <li>Microsoft Certified: Azure Virtual Desktop Specialty</li>
+      <li>Citrix Certified Expert – Virtualization</li>
+      <li>Citrix Virtual Apps and Desktops Service on Citrix Cloud</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Kontakt</h2>
+    <p>Schreib mir gern über das <a href="https://forms.cloud.microsoft/e/nGM1QnStyy" target="_blank" rel="noopener">Kontaktformular</a>.</p>
+    <p style="margin-top:.6rem">Mehr von mir findest du auf <a href="https://github.com/DerSucker" target="_blank" rel="noopener">GitHub</a>.</p>
+  </section>
+</div>
+<footer>
+  <div>by Martin Sucker | <a href="https://github.com/DerSucker" target="_blank" rel="noopener">github.com/DerSucker</a></div>
+  <div class="btns">
+    <button class="mode" id="imp-btn" type="button" aria-expanded="false" aria-controls="impressum">Impressum anzeigen</button>
+    <button class="mode" id="priv-btn" type="button" aria-expanded="false" aria-controls="privacy">Datenschutz</button>
+    <button class="mode" id="game-btn" type="button" aria-expanded="false" aria-controls="gamepanel">Spiel</button>
+  </div>
+  <div class="imp" id="gamepanel" inert>
+    <div>
+      <div class="game-inner">
+        <h2>Byte-Man</h2>
+        <div class="ghud"><span id="gs">Punkte: 0</span><span id="gl">Leben: 3</span></div>
+        <canvas id="cv" width="420" height="420" aria-label="Spielfeld"></canvas>
+        <div class="pad" id="pad">
+          <button class="mode" type="button" data-d="0,-1" aria-label="Hoch">▲</button>
+          <button class="mode" type="button" data-d="-1,0" aria-label="Links">◀</button>
+          <button class="mode" type="button" data-d="0,1" aria-label="Runter">▼</button>
+          <button class="mode" type="button" data-d="1,0" aria-label="Rechts">▶</button>
+        </div>
+        <button class="mode" id="greset" type="button">Neustart</button>
+      </div>
+    </div>
+  </div>
+  <div class="imp" id="impressum" inert>
+    <div>
+      <div class="imp-inner" data-nosnippet>
+        <h2>Impressum</h2>
+
+        <h3>Angaben gemäß § 5 DDG</h3>
+        <p>Martin Sucker<br>
+        <span data-f="street"></span><br>
+        <span data-f="city"></span><br>
+        Deutschland
+        <noscript><br>Für die Anzeige von Anschrift und E-Mail-Adresse wird JavaScript benötigt.</noscript></p>
+
+        <h3>Kontakt</h3>
+        <p>E-Mail: <span data-f="mail"></span><br>
+        Kontaktformular: <a href="https://forms.cloud.microsoft/e/nGM1QnStyy" target="_blank" rel="noopener">Microsoft Forms</a></p>
+
+        <h3>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h3>
+        <p>Martin Sucker, Anschrift wie oben</p>
+
+        <h3>Hosting</h3>
+        <p>Diese Website wird über GitHub Pages bereitgestellt. Anbieter: GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.</p>
+
+        <h3>Haftung für Inhalte</h3>
+        <p>Die Inhalte dieser Seite wurden mit Sorgfalt erstellt. Für Richtigkeit, Vollständigkeit und Aktualität kann jedoch keine Gewähr übernommen werden. Bei bekannt werdenden Rechtsverletzungen werden entsprechende Inhalte umgehend entfernt.</p>
+
+        <h3>Haftung für Links</h3>
+        <p>Diese Seite enthält Links zu externen Websites Dritter (z. B. GitHub, Microsoft Forms), auf deren Inhalte kein Einfluss besteht. Für diese Inhalte ist stets der jeweilige Anbieter verantwortlich.</p>
+
+        <h3>Urheberrecht</h3>
+        <p>Die Inhalte und Werke auf dieser Seite unterliegen dem deutschen Urheberrecht. Eine Vervielfältigung oder Verwendung bedarf der schriftlichen Zustimmung des Autors.</p>
+
+        <h3>Verbraucherstreitbeilegung</h3>
+        <p>Ich bin nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+      </div>
+    </div>
+  </div>
+  <div class="imp" id="privacy" inert>
+    <div>
+      <div class="imp-inner" data-nosnippet>
+        <h2>Datenschutzerklärung</h2>
+
+        <h3>Verantwortlicher</h3>
+        <p>Martin Sucker, <span data-f="street"></span>, <span data-f="city"></span>, Deutschland<br>
+        E-Mail: <span data-f="mail"></span></p>
+
+        <h3>Hosting (GitHub Pages)</h3>
+        <p>Diese Website wird bei GitHub Pages gehostet (GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA). Beim Aufruf verarbeitet der Hoster technisch notwendige Daten, etwa IP-Adresse, Datum und Uhrzeit, aufgerufene Seite und Browsertyp. Das ist nötig, um die Seite auszuliefern (Art. 6 Abs. 1 lit. f DSGVO). Eine Übermittlung in die USA ist möglich. Details stehen in der Datenschutzerklärung von GitHub.</p>
+
+        <h3>Cookies und Tracking</h3>
+        <p>Diese Website setzt keine Cookies und nutzt keine Analyse- oder Tracking-Dienste. Schriftarten werden nicht von externen Servern geladen.</p>
+
+        <h3>Kontaktaufnahme</h3>
+        <p>Für Anfragen nutze ich ein Formular von Microsoft Forms. Deine Eingaben werden von Microsoft verarbeitet und mir zur Bearbeitung deiner Anfrage bereitgestellt (Art. 6 Abs. 1 lit. b oder f DSGVO). Es gelten die Datenschutzbestimmungen von Microsoft. Bei Kontakt per E-Mail speichere ich deine Angaben nur zur Bearbeitung und lösche sie, sobald sie nicht mehr erforderlich sind.</p>
+
+        <h3>Externe Links</h3>
+        <p>Beim Anklicken von Links zu GitHub oder Microsoft Forms gelten die Datenschutzbestimmungen des jeweiligen Anbieters.</p>
+
+        <h3>Deine Rechte</h3>
+        <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch (Art. 15 bis 21 DSGVO). Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren, z. B. bei <span>der Landesbeauftragten für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)</span>.</p>
+
+        <p style="margin-top:1rem">Stand: <span>01.10.2026</span></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="term" id="term" role="dialog" aria-label="Terminal" hidden>
+  <div class="tbar"><span>byte-terminal</span><button class="mode" id="tx" type="button" aria-label="Terminal schließen">✕</button></div>
+  <div class="tout" id="tout" aria-live="polite"></div>
+  <div class="tline"><span>&gt;</span><input id="tin" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Befehl"></div>
+</div>
+<canvas id="mx" hidden aria-hidden="true"></canvas>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('mode');
+  btn.addEventListener('click',function(){
+    var light=root.getAttribute('data-theme')!=='light';
+    root.setAttribute('data-theme',light?'light':'dark');
+    btn.textContent=light?'☾ Darkmode':'☀ Lightmode';
+  });
+})();
+(function(){
+  var btn=document.getElementById('imp-btn'),panel=document.getElementById('impressum');
+  btn.addEventListener('click',function(){
+    var open=!panel.classList.contains('open');
+    panel.classList.toggle('open',open);
+    if(open){panel.removeAttribute('inert');}else{panel.setAttribute('inert','');}
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.textContent=open?'Impressum ausblenden':'Impressum anzeigen';
+    if(open){
+      var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      setTimeout(function(){panel.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});},reduce?0:420);
+    }
+  });
+})();
+(function(){
+  var btn=document.getElementById('game-btn'),panel=document.getElementById('gamepanel'),cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+  var T=28,M=["###############","#.............#","#.##.#.#.#.##.#","#.#.........#.#","#.#.##.#.##.#.#","#.....#.#.....#","#.............#","#.###.....###.#","#.............#","#.....#.#.....#","#.#.##.#.##.#.#","#.#.........#.#","#.##.#.#.#.##.#","#.............#","###############"];
+  var D=[[1,0],[-1,0],[0,1],[0,-1]],GC=['#ff2bd6','#ff8a00','#7cff6b'],GS=[[1,1],[13,1],[7,1]];
+  var map,g,p,gh,raf=0,last=0,isOpen=false,t=0;
+  function ok(c,r){return map[r]&&map[r][c]&&map[r][c]!=='#';}
+  function hud(){document.getElementById('gs').textContent='Punkte: '+g.s;document.getElementById('gl').textContent='Leben: '+g.l;}
+  function reset(){p={c:7,r:11,dx:0,dy:0,p:0,q:null};gh=GS.map(function(s){return{c:s[0],r:s[1],dx:0,dy:0,p:0};});}
+  function init(){map=M.map(function(r){return r.split('');});g={s:0,l:3,d:0,run:false,end:''};map.forEach(function(r){r.forEach(function(ch){if(ch==='.')g.d++;});});reset();hud();}
+  function adv(e,sp,dt,fn){
+    if(e.dx||e.dy){e.p+=sp*dt;while(e.p>=1){e.c+=e.dx;e.r+=e.dy;e.p-=1;fn(e);if(!(e.dx||e.dy)){e.p=0;break;}}}
+    else fn(e);
+  }
+  function pTile(e){
+    if(map[e.r][e.c]==='.'){map[e.r][e.c]=' ';g.s+=10;g.d--;hud();if(!g.d)g.end=window.LANG==='en'?'Cleared!':'Geschafft!';}
+    var q=e.q;if(q&&ok(e.c+q[0],e.r+q[1])){e.dx=q[0];e.dy=q[1];}
+    if((e.dx||e.dy)&&!ok(e.c+e.dx,e.r+e.dy)){e.dx=0;e.dy=0;}
+  }
+  function gTile(e){
+    var o=D.filter(function(d){return ok(e.c+d[0],e.r+d[1]);});
+    var nb=o.filter(function(d){return !(d[0]===-e.dx&&d[1]===-e.dy);});
+    if(nb.length)o=nb;
+    var pc=Math.round(p.c+p.dx*p.p),pr=Math.round(p.r+p.dy*p.p);
+    function dist(d){return Math.abs(e.c+d[0]-pc)+Math.abs(e.r+d[1]-pr);}
+    var pick=Math.random()<.65?o.reduce(function(a,b){return dist(b)<dist(a)?b:a;}):o[Math.random()*o.length|0];
+    e.dx=pick[0];e.dy=pick[1];
+  }
+  function update(dt){
+    if(!g.run||g.end)return;
+    t+=dt;adv(p,4.6,dt,pTile);
+    gh.forEach(function(e){adv(e,3.4,dt,gTile);});
+    var px=p.c+p.dx*p.p,py=p.r+p.dy*p.p;
+    for(var i=0;i<gh.length;i++){
+      var e=gh[i];
+      if(Math.hypot(e.c+e.dx*e.p-px,e.r+e.dy*e.p-py)<.65){
+        g.l--;hud();
+        if(g.l<=0){g.end='Game Over';}else{reset();g.run=false;}
+        break;
+      }
+    }
+  }
+  function draw(){
+    var cs=getComputedStyle(document.documentElement);
+    var n1=cs.getPropertyValue('--neon1').trim(),n2=cs.getPropertyValue('--neon2').trim(),bg=cs.getPropertyValue('--bg').trim(),card=cs.getPropertyValue('--card').trim(),tx=cs.getPropertyValue('--text').trim();
+    ctx.fillStyle=bg;ctx.fillRect(0,0,420,420);
+    ctx.lineWidth=2;
+    for(var r=0;r<15;r++)for(var c=0;c<15;c++){
+      var ch=map[r][c];
+      if(ch==='#'){ctx.fillStyle=card;ctx.fillRect(c*T+3,r*T+3,T-6,T-6);ctx.strokeStyle=n1;ctx.globalAlpha=.7;ctx.strokeRect(c*T+3,r*T+3,T-6,T-6);ctx.globalAlpha=1;}
+      else if(ch==='.'){ctx.fillStyle=tx;ctx.beginPath();ctx.arc(c*T+T/2,r*T+T/2,2.5,0,7);ctx.fill();}
+    }
+    var x=(p.c+p.dx*p.p+.5)*T,y=(p.r+p.dy*p.p+.5)*T,a=Math.atan2(p.dy,p.dx),m=.05+.2*Math.abs(Math.sin(t*12));
+    ctx.shadowBlur=14;ctx.shadowColor='#ffe600';ctx.fillStyle='#ffe600';
+    ctx.beginPath();ctx.moveTo(x,y);ctx.arc(x,y,T*.42,a+m*Math.PI,a+(2-m)*Math.PI);ctx.closePath();ctx.fill();
+    gh.forEach(function(e,i){
+      var gx=(e.c+e.dx*e.p+.5)*T,gy=(e.r+e.dy*e.p+.5)*T,R=T*.4;
+      ctx.shadowColor=GC[i];ctx.fillStyle=GC[i];
+      ctx.beginPath();ctx.arc(gx,gy,R,Math.PI,0);ctx.lineTo(gx+R,gy+R);ctx.lineTo(gx-R,gy+R);ctx.closePath();ctx.fill();
+      ctx.shadowBlur=0;ctx.fillStyle='#fff';
+      ctx.beginPath();ctx.arc(gx-R*.4,gy-R*.1,3.2,0,7);ctx.arc(gx+R*.4,gy-R*.1,3.2,0,7);ctx.fill();
+      ctx.shadowBlur=14;
+    });
+    ctx.shadowBlur=0;
+    if(!g.run||g.end){
+      ctx.fillStyle=bg;ctx.globalAlpha=.8;ctx.fillRect(0,185,420,50);ctx.globalAlpha=1;
+      ctx.fillStyle=n2;ctx.font='20px "Special Elite","Courier New",monospace';ctx.textAlign='center';ctx.textBaseline='middle';
+      ctx.fillText(g.end||(window.LANG==='en'?'Use arrow keys or swipe to start':'Pfeiltasten oder Wischen zum Start'),210,210);
+    }
+  }
+  function loop(ts){var dt=Math.min((ts-last)/1000,.05);last=ts;update(dt);draw();raf=requestAnimationFrame(loop);}
+  function dir(x,y){
+    if(!isOpen||g.end)return;
+    g.run=true;
+    if((p.dx||p.dy)&&p.dx===-x&&p.dy===-y){p.c+=p.dx;p.r+=p.dy;p.p=1-p.p;p.dx=x;p.dy=y;}
+    p.q=[x,y];
+  }
+  document.addEventListener('keydown',function(ev){
+    var m={ArrowUp:[0,-1],ArrowDown:[0,1],ArrowLeft:[-1,0],ArrowRight:[1,0],w:[0,-1],s:[0,1],a:[-1,0],d:[1,0]}[ev.key];
+    if(m&&isOpen){ev.preventDefault();dir(m[0],m[1]);}
+  });
+  document.getElementById('pad').addEventListener('pointerdown',function(ev){
+    var b=ev.target.closest('[data-d]');if(!b)return;
+    ev.preventDefault();var d=b.getAttribute('data-d').split(',');dir(+d[0],+d[1]);
+  });
+  var sx=0,sy=0;
+  cv.addEventListener('touchstart',function(ev){sx=ev.touches[0].clientX;sy=ev.touches[0].clientY;},{passive:true});
+  cv.addEventListener('touchend',function(ev){
+    var dx=ev.changedTouches[0].clientX-sx,dy=ev.changedTouches[0].clientY-sy;
+    if(Math.max(Math.abs(dx),Math.abs(dy))<24)return;
+    if(Math.abs(dx)>Math.abs(dy))dir(dx>0?1:-1,0);else dir(0,dy>0?1:-1);
+  },{passive:true});
+  document.getElementById('greset').addEventListener('click',init);
+  btn.addEventListener('click',function(){
+    isOpen=!isOpen;
+    panel.classList.toggle('open',isOpen);
+    if(isOpen){panel.removeAttribute('inert');}else{panel.setAttribute('inert','');}
+    btn.setAttribute('aria-expanded',isOpen?'true':'false');
+    btn.textContent=isOpen?'Spiel schließen':'Spiel';
+    if(isOpen){
+      last=performance.now();raf=requestAnimationFrame(loop);
+      var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      setTimeout(function(){panel.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});},reduce?0:420);
+    }else{cancelAnimationFrame(raf);}
+  });
+  init();
+})();
+(function(){
+  var btn=document.getElementById('priv-btn'),panel=document.getElementById('privacy');
+  btn.addEventListener('click',function(){
+    var open=!panel.classList.contains('open');
+    panel.classList.toggle('open',open);
+    if(open){panel.removeAttribute('inert');}else{panel.setAttribute('inert','');}
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.textContent=open?'Datenschutz ausblenden':'Datenschutz';
+    if(open){
+      var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      setTimeout(function(){panel.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});},reduce?0:420);
+    }
+  });
+})();
+(function(){
+  var term=document.getElementById('term'),out=document.getElementById('tout'),inp=document.getElementById('tin');
+  var mx=document.getElementById('mx'),mc=mx.getContext('2d'),mt=0,mraf=0,drops=[];
+  var seq=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'],pos=0;
+  var hist=[],hi=0,CH='ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿ0123456789ABCDEF'.split('');
+  var FORMS='https://forms.cloud.microsoft/e/nGM1QnStyy',GH='https://github.com/DerSucker';
+  function line(txt,href){
+    var d=document.createElement('div');
+    if(href){var a=document.createElement('a');a.href=href;a.target='_blank';a.rel='noopener';a.textContent=txt;d.appendChild(a);}
+    else d.textContent=txt;
+    out.appendChild(d);out.scrollTop=out.scrollHeight;
+  }
+  function openT(){term.hidden=false;if(!out.childNodes.length)line('Byte-Terminal v1.0. Tippe "help".');inp.focus();}
+  function closeT(){term.hidden=true;}
+  function stopM(){cancelAnimationFrame(mraf);mx.hidden=true;}
+  function startM(){
+    mx.hidden=false;mx.width=innerWidth;mx.height=innerHeight;
+    drops=[];for(var i=0;i<Math.ceil(mx.width/16);i++)drops[i]=Math.random()*-40;
+    mc.fillStyle='#000';mc.fillRect(0,0,mx.width,mx.height);
+    mt=performance.now();mraf=requestAnimationFrame(mloop);
+  }
+  function mloop(ts){
+    mc.fillStyle='rgba(0,0,0,.08)';mc.fillRect(0,0,mx.width,mx.height);
+    mc.font='16px monospace';mc.fillStyle='#00ff41';mc.textAlign='left';
+    for(var i=0;i<drops.length;i++){
+      var y=drops[i]*16;
+      mc.fillText(CH[Math.random()*CH.length|0],i*16,y);
+      if(y>mx.height&&Math.random()>.975)drops[i]=0;
+      drops[i]++;
+    }
+    mc.font='22px monospace';mc.fillStyle='#fff';mc.textAlign='center';
+    mc.fillText('Take both pills',mx.width/2,mx.height/2);
+    if(ts-mt>8000)stopM();else mraf=requestAnimationFrame(mloop);
+  }
+  var cmds={
+    help:function(){line('Befehle: whoami, skills, certs, contact, github, theme, matrix, clear, exit');},
+    whoami:function(){line('Martin Sucker, IT-Consultant für End User Computing');},
+    skills:function(){line('Azure, Citrix, AVD, Windows 365, Intune, SCCM, PowerShell, Automation, M365, Migration, Virtual Desktop');},
+    certs:function(){line('Azure Administrator Associate');line('Azure Solutions Architect Expert');line('Azure Virtual Desktop Specialty');line('Citrix Certified Expert – Virtualization');line('Citrix Virtual Apps and Desktops Service on Citrix Cloud');},
+    contact:function(){line('Kontaktformular öffnen',FORMS);},
+    github:function(){line('github.com/DerSucker',GH);},
+    theme:function(){document.getElementById('mode').click();line('Design gewechselt.');},
+    matrix:function(){closeT();startM();},
+    clear:function(){out.textContent='';},
+    exit:function(){closeT();}
+  };
+  function run(raw){
+    var c=raw.trim().toLowerCase();
+    line('> '+raw);
+    if(!c)return;
+    if(c==='sudo hire martin'){line('[sudo] Passwort für recruiter: ********');line('Zugriff gewährt. Gute Entscheidung.');line('Kontaktformular öffnen',FORMS);}
+    else if(c.indexOf('sudo')===0)line('recruiter ist nicht in der sudoers-Datei. Dieser Vorfall wird gemeldet.');
+    else if(cmds.hasOwnProperty(c))cmds[c]();
+    else line('Befehl nicht gefunden: '+c+'. Tippe "help".');
+  }
+  inp.addEventListener('keydown',function(ev){
+    if(ev.key==='Enter'){var v=inp.value;if(v.trim()){hist.push(v);}hi=hist.length;inp.value='';run(v);}
+    else if(ev.key==='Escape'){closeT();}
+    else if(ev.key==='ArrowUp'){ev.preventDefault();if(hi>0){hi--;inp.value=hist[hi];}}
+    else if(ev.key==='ArrowDown'){ev.preventDefault();hi=Math.min(hi+1,hist.length);inp.value=hist[hi]||'';}
+  });
+  document.addEventListener('keydown',function(ev){
+    if(ev.target===inp)return;
+    if(ev.key==='Escape'){closeT();stopM();return;}
+    if(ev.key==='`'||ev.key==='~'||ev.code==='Backquote'){ev.preventDefault();if(term.hidden)openT();else closeT();return;}
+    var k=ev.key.length===1?ev.key.toLowerCase():ev.key;
+    if(k===seq[pos]){pos++;if(pos===seq.length){pos=0;startM();}}else{pos=(k===seq[0])?1:0;}
+  });
+  document.querySelector('.cursor').addEventListener('click',function(){if(term.hidden)openT();else closeT();});
+  document.getElementById('tx').addEventListener('click',closeT);
+  mx.addEventListener('click',stopM);
+})();
+(function(){
+  /* HIER EINTRAGEN: Werte mit eckigen Klammern gelten als Platzhalter.
+     Die Angaben stehen nicht im statischen HTML, sondern werden erst im Browser zusammengesetzt. */
+  var DATA={
+    street:['Leipziger Ring','19'],
+    zip:'50374',
+    town:'Erftstadt',
+    mailUser:'mail',
+    mailHost:'martinsucker.de'
+  };
+  var V={
+    street:DATA.street.join(' '),
+    city:DATA.zip+' '+DATA.town,
+    mail:DATA.mailUser+'@'+DATA.mailHost
+  };
+  var els=document.querySelectorAll('[data-f]');
+  for(var i=0;i<els.length;i++){
+    var el=els[i],f=el.getAttribute('data-f'),v=V[f],ph=v.charAt(0)==='[';
+    if(f==='mail'&&!ph){
+      var a=document.createElement('a');a.href='mailto:'+v;a.textContent=v;el.appendChild(a);
+    }else{
+      el.textContent=v;
+      if(ph)el.className='ph';
+    }
+  }
+})();
+(function(){
+  var EN={
+    'IT-Consultant für End User Computing':'IT Consultant for End User Computing',
+    'Kurzprofil':'Profile',
+    'Ich bin IT-Consultant für End User Computing und unterstütze bei Planung und Betrieb moderner Arbeitsplätze. Mein Schwerpunkt liegt auf Microsoft- und Citrix-Technologien, von virtuellen Desktops und Anwendungen bis zur Verwaltung von Endgeräten.':'I am an IT consultant for End User Computing and support the planning and operation of modern workplaces. My focus is on Microsoft and Citrix technologies, from virtual desktops and applications to endpoint management.',
+    'Schwerpunkte':'Focus areas',
+    'Architektur und Design':'Architecture and design',
+    'Konzepte für virtuelle Desktops und Anwendungen mit Azure und Citrix.':'Concepts for virtual desktops and applications with Azure and Citrix.',
+    'Umzug bestehender Umgebungen in die Cloud oder auf neue Plattformen.':'Moving existing environments to the cloud or to new platforms.',
+    'Optimierung und Troubleshooting':'Optimization and troubleshooting',
+    'Analyse von Performance, Anmeldezeiten und Störungen.':'Analysis of performance, logon times and incidents.',
+    'Automatisierung':'Automation',
+    'Wiederkehrende Aufgaben in Bereitstellung und Betrieb automatisieren.':'Automating recurring tasks in provisioning and operations.',
+    'Wissenstransfer zu Microsoft- und Citrix-Themen.':'Knowledge transfer on Microsoft and Citrix topics.',
+    'Werdegang':'Experience',
+    '08/2026 – heute':'08/2026 – present',
+    'Themen':'Topics',
+    'Zertifizierungen':'Certifications',
+    'Kontakt':'Contact',
+    'Schreib mir gern über das':'Feel free to reach out via the',
+    'Kontaktformular':'contact form',
+    'Mehr von mir findest du auf':'You can find more about me on',
+    '☀ Lightmode':'☀ Light mode',
+    '☾ Darkmode':'☾ Dark mode',
+    'Impressum anzeigen':'Show legal notice',
+    'Impressum ausblenden':'Hide legal notice',
+    'Datenschutz':'Privacy policy',
+    'Datenschutz ausblenden':'Hide privacy policy',
+    'Spiel':'Game',
+    'Spiel schließen':'Close game',
+    'Neustart':'Restart',
+    'Impressum':'Legal notice',
+    'Angaben gemäß § 5 DDG':'Information pursuant to § 5 DDG',
+    'Deutschland':'Germany',
+    ', Deutschland':', Germany',
+    'E-Mail:':'Email:',
+    'Kontaktformular:':'Contact form:',
+    'Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV':'Responsible for content pursuant to § 18 (2) MStV',
+    'Martin Sucker, Anschrift wie oben':'Martin Sucker, address as above',
+    'Diese Website wird über GitHub Pages bereitgestellt. Anbieter: GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.':'This website is provided via GitHub Pages. Provider: GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.',
+    'Haftung für Inhalte':'Liability for content',
+    'Die Inhalte dieser Seite wurden mit Sorgfalt erstellt. Für Richtigkeit, Vollständigkeit und Aktualität kann jedoch keine Gewähr übernommen werden. Bei bekannt werdenden Rechtsverletzungen werden entsprechende Inhalte umgehend entfernt.':'The content of this page has been created with care. However, no guarantee can be given for its accuracy, completeness or timeliness. If legal infringements become known, the relevant content will be removed immediately.',
+    'Haftung für Links':'Liability for links',
+    'Diese Seite enthält Links zu externen Websites Dritter (z. B. GitHub, Microsoft Forms), auf deren Inhalte kein Einfluss besteht. Für diese Inhalte ist stets der jeweilige Anbieter verantwortlich.':'This page contains links to external third-party websites (e.g. GitHub, Microsoft Forms) whose content I have no influence over. The respective provider is always responsible for that content.',
+    'Urheberrecht':'Copyright',
+    'Die Inhalte und Werke auf dieser Seite unterliegen dem deutschen Urheberrecht. Eine Vervielfältigung oder Verwendung bedarf der schriftlichen Zustimmung des Autors.':'The content and works on this page are subject to German copyright law. Reproduction or use requires the written consent of the author.',
+    'Verbraucherstreitbeilegung':'Consumer dispute resolution',
+    'Ich bin nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.':'I am neither willing nor obliged to participate in dispute resolution proceedings before a consumer arbitration board.',
+    'Datenschutzerklärung':'Privacy Policy',
+    'Verantwortlicher':'Controller',
+    'Diese Website wird bei GitHub Pages gehostet (GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA). Beim Aufruf verarbeitet der Hoster technisch notwendige Daten, etwa IP-Adresse, Datum und Uhrzeit, aufgerufene Seite und Browsertyp. Das ist nötig, um die Seite auszuliefern (Art. 6 Abs. 1 lit. f DSGVO). Eine Übermittlung in die USA ist möglich. Details stehen in der Datenschutzerklärung von GitHub.':'This website is hosted on GitHub Pages (GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA). When you visit, the host processes technically necessary data such as IP address, date and time, requested page and browser type. This is required to deliver the page (Art. 6(1)(f) GDPR). A transfer to the USA is possible. Details can be found in GitHub\'s privacy statement.',
+    'Cookies und Tracking':'Cookies and tracking',
+    'Diese Website setzt keine Cookies und nutzt keine Analyse- oder Tracking-Dienste. Schriftarten werden nicht von externen Servern geladen.':'This website does not set cookies and does not use analytics or tracking services. Fonts are not loaded from external servers.',
+    'Kontaktaufnahme':'Contact requests',
+    'Für Anfragen nutze ich ein Formular von Microsoft Forms. Deine Eingaben werden von Microsoft verarbeitet und mir zur Bearbeitung deiner Anfrage bereitgestellt (Art. 6 Abs. 1 lit. b oder f DSGVO). Es gelten die Datenschutzbestimmungen von Microsoft. Bei Kontakt per E-Mail speichere ich deine Angaben nur zur Bearbeitung und lösche sie, sobald sie nicht mehr erforderlich sind.':'For enquiries I use a Microsoft Forms form. Your input is processed by Microsoft and provided to me to handle your request (Art. 6(1)(b) or (f) GDPR). Microsoft\'s privacy terms apply. If you contact me by email, I store your details only to handle your request and delete them once they are no longer required.',
+    'Externe Links':'External links',
+    'Beim Anklicken von Links zu GitHub oder Microsoft Forms gelten die Datenschutzbestimmungen des jeweiligen Anbieters.':'When you click links to GitHub or Microsoft Forms, the privacy terms of the respective provider apply.',
+    'Deine Rechte':'Your rights',
+    'Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch (Art. 15 bis 21 DSGVO). Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren, z. B. bei':'You have the right to access, rectification, erasure, restriction of processing, data portability and objection (Art. 15 to 21 GDPR). You can also lodge a complaint with a data protection supervisory authority, e.g.',
+    'der Landesbeauftragten für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)':'the State Commissioner for Data Protection and Freedom of Information of North Rhine-Westphalia (LDI NRW)',
+    'Stand:':'Last updated:',
+    '01.10.2026':'1 October 2026',
+    'Byte-Terminal v1.0. Tippe "help".':'Byte-Terminal v1.0. Type "help".',
+    'Befehle: whoami, skills, certs, contact, github, theme, matrix, clear, exit':'Commands: whoami, skills, certs, contact, github, theme, matrix, clear, exit',
+    'Martin Sucker, IT-Consultant für End User Computing':'Martin Sucker, IT Consultant for End User Computing',
+    'Kontaktformular öffnen':'Open contact form',
+    'Design gewechselt.':'Theme switched.',
+    '[sudo] Passwort für recruiter: ********':'[sudo] password for recruiter: ********',
+    'Zugriff gewährt. Gute Entscheidung.':'Access granted. Good choice.',
+    'recruiter ist nicht in der sudoers-Datei. Dieser Vorfall wird gemeldet.':'recruiter is not in the sudoers file. This incident will be reported.'
+  };
+  var DE={};for(var k in EN)DE[EN[k]]=k;
+  var RE=[[/^Punkte: (\d+)$/,'Score: $1'],[/^Leben: (\d+)$/,'Lives: $1'],[/^Befehl nicht gefunden: (.*)\. Tippe "help"\.$/,'Command not found: $1. Type "help".']];
+  var RD=[[/^Score: (\d+)$/,'Punkte: $1'],[/^Lives: (\d+)$/,'Leben: $1']];
+  var lang='de',btn=document.getElementById('lang');
+  function tr(n,map,rx){
+    var raw=n.nodeValue,s=raw.replace(/\s+/g,' ').trim();
+    if(!s)return;
+    var o=map[s];
+    if(o===undefined){for(var i=0;i<rx.length;i++){if(rx[i][0].test(s)){o=s.replace(rx[i][0],rx[i][1]);break;}}}
+    if(o!==undefined&&o!==s)n.nodeValue=raw.match(/^\s*/)[0]+o+raw.match(/\s*$/)[0];
+  }
+  function walk(root,map,rx){
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null),n,L=[];
+    while(n=w.nextNode()){var pn=n.parentNode.nodeName;if(pn!=='SCRIPT'&&pn!=='STYLE'&&pn!=='NOSCRIPT')L.push(n);}
+    L.forEach(function(x){tr(x,map,rx);});
+  }
+  new MutationObserver(function(ms){
+    if(lang!=='en')return;
+    ms.forEach(function(m){
+      if(m.type==='characterData')tr(m.target,EN,RE);
+      else m.addedNodes.forEach(function(n){if(n.nodeType===3)tr(n,EN,RE);else if(n.nodeType===1)walk(n,EN,RE);});
+    });
+  }).observe(document.body,{childList:true,subtree:true,characterData:true});
+  function setLang(l){
+    lang=l;window.LANG=l;document.documentElement.lang=l;
+    document.title=l==='en'?'Martin Sucker – IT Consultant End User Computing':'Martin Sucker – IT-Consultant End User Computing';
+    walk(document.body,l==='en'?EN:DE,l==='en'?RE:RD);
+    btn.textContent=l==='en'?'Deutsch':'English';
+    try{localStorage.setItem('lang',l);}catch(e){}
+  }
+  btn.addEventListener('click',function(){setLang(lang==='en'?'de':'en');});
+  try{if(localStorage.getItem('lang')==='en')setLang('en');}catch(e){}
+})();
+</script>
+</body>
+</html>
