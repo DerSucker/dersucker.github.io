@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Martin Sucker – IT-Consultant End User Computing</title>
-<meta name="description" content="Martin Sucker, IT-Consultant für End User Computing. Schwerpunkt Microsoft- und Citrix-Technologien, Azure Solutions Architect und Citrix Expert.">
+<title>Martin Sucker – IT-Consultant End User Computing &amp; Cloud</title>
+<meta name="description" content="Martin Sucker, IT-Consultant für End User Computing und Cloud. Schwerpunkt Citrix, Microsoft Azure, Cloud-Desktops und IT-Notfallumgebungen.">
 <meta name="author" content="Martin Sucker">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0a0c14">
 <link rel="canonical" href="https://www.martinsucker.de/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
-<meta property="og:title" content="Martin Sucker – IT-Consultant End User Computing">
+<meta property="og:title" content="Martin Sucker – IT-Consultant End User Computing &amp; Cloud">
 <meta property="og:description" content="Microsoft, Citrix, Azure und Automation: die Webseite von Martin Sucker.">
 <meta property="og:url" content="https://www.martinsucker.de/">
 <meta property="og:image" content="https://www.martinsucker.de/og-image.png">
@@ -83,15 +83,12 @@ footer{text-align:center;padding:1.2rem;border-top:1px solid var(--line);color:v
 .imp-inner p{font-size:.92rem;margin:0 0 .4rem}
 .ph{color:var(--neon2);border-bottom:1px dashed var(--neon2)}
 .btns{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-top:.8rem}
-.game-inner{max-width:420px;margin:0 auto;padding-top:1.4rem}
-.ghud{display:flex;justify-content:space-between;margin-bottom:.5rem;color:var(--neon1);text-shadow:var(--glow)}
-#cv{display:block;width:100%;height:auto;background:var(--bg);border:1px solid var(--line);border-radius:10px;touch-action:none}
-.pad{display:grid;grid-template-columns:repeat(3,56px);grid-template-rows:repeat(2,46px);gap:6px;justify-content:center;margin:.9rem 0 .6rem}
-.pad .mode{padding:0}
-.pad [data-d="0,-1"]{grid-column:2;grid-row:1}
-.pad [data-d="-1,0"]{grid-column:1;grid-row:2}
-.pad [data-d="0,1"]{grid-column:2;grid-row:2}
-.pad [data-d="1,0"]{grid-column:3;grid-row:2}
+select.mode{font:inherit;font-size:.9rem;color:var(--text);background-color:var(--card);border:1px solid var(--line);border-radius:999px;padding:.45rem 2.2rem .45rem 1rem;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--neon1) 50%),linear-gradient(135deg,var(--neon1) 50%,transparent 50%);background-position:calc(100% - 1.2rem) 55%,calc(100% - .85rem) 55%;background-size:.35rem .35rem;background-repeat:no-repeat}
+select.mode:hover{border-color:var(--neon1)}
+select.mode option{background:var(--card);color:var(--text)}
+@media (pointer:coarse){select.mode{font-size:16px}}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+section p+p{margin-top:.6rem}
 @media (prefers-reduced-motion:reduce){.cursor{animation:none}.imp{transition:none}}
 </style>
 </head>
@@ -100,20 +97,33 @@ footer{text-align:center;padding:1.2rem;border-top:1px solid var(--line);color:v
   <div class="top"><button class="mode" id="mode" type="button" aria-label="Design wechseln">☀ Lightmode</button><button class="mode" id="lang" type="button" aria-label="Sprache wechseln / Switch language">English</button></div>
   <header>
     <h1>Martin Sucker<span class="cursor" aria-hidden="true"></span></h1>
-    <p class="role">IT-Consultant für End User Computing</p>
+    <p class="role">IT-Consultant für End User Computing und Cloud</p>
   </header>
   <section>
     <h2>Kurzprofil</h2>
-    <p>Ich bin IT-Consultant für End User Computing und unterstütze bei Planung und Betrieb moderner Arbeitsplätze. Mein Schwerpunkt liegt auf Microsoft- und Citrix-Technologien, von virtuellen Desktops und Anwendungen bis zur Verwaltung von Endgeräten.</p>
+    <p>Ich bin IT-Consultant für End User Computing und Cloud-Infrastrukturen und bringe mehr als 19 Jahre Projekterfahrung mit. Seit 2015 konzipiere, baue und betreibe ich Citrix-Infrastrukturen bei Enterprise-Kunden. In den letzten Jahren habe ich meinen Schwerpunkt konsequent auf Microsoft Azure erweitert, insbesondere auf Cloud-Desktops, hybride Szenarien und IT-Notfallumgebungen.</p>
+    <p>Ich verbinde Architekturverständnis mit hoher Umsetzungsstärke, übernehme Teilprojektleitungen und werde gezielt dort eingesetzt, wo kritische Migrationen oder instabile Umgebungen schnell beherrscht werden müssen.</p>
+    <p>Ich begleite Organisationen auf dem Weg von klassischen On-Premises-Arbeitsplätzen zu sicheren, wirtschaftlichen Cloud-Desktops, von der Strategie bis zum stabilen Betrieb.</p>
   </section>
   <section>
-    <h2>Schwerpunkte</h2>
+    <h2>Kernkompetenzen</h2>
     <div class="svc">
-      <div><strong>Architektur und Design</strong><p>Konzepte für virtuelle Desktops und Anwendungen mit Azure und Citrix.</p></div>
-      <div><strong>Migration</strong><p>Umzug bestehender Umgebungen in die Cloud oder auf neue Plattformen.</p></div>
-      <div><strong>Optimierung und Troubleshooting</strong><p>Analyse von Performance, Anmeldezeiten und Störungen.</p></div>
-      <div><strong>Automatisierung</strong><p>Wiederkehrende Aufgaben in Bereitstellung und Betrieb automatisieren.</p></div>
-      <div><strong>Workshops</strong><p>Wissenstransfer zu Microsoft- und Citrix-Themen.</p></div>
+      <div><strong>End User Computing und Desktopvirtualisierung</strong><p>Konzeption, Implementierung und Migration von Citrix-Umgebungen (Virtual Apps and Desktops, DaaS, PVS, WEM, ADC/NetScaler, StoreFront, FAS), von kleinen Standortlösungen bis zu Umgebungen mit mehreren tausend VDIs und Terminalservern.</p></div>
+      <div><strong>Cloud-Desktops und Microsoft Azure</strong><p>Bewertung und Konzeption von Azure Virtual Desktop, Windows 365 und Citrix Cloud DaaS, inklusive Proofs of Concept, Anbieterevaluierungen und sicherer Architekturen mit Entra ID und Intune.</p></div>
+      <div><strong>IT-Notfall- und Wiederherstellungskonzepte</strong><p>Konzeption und Aufbau Azure-basierter Notfallumgebungen, Analyse geschäftskritischer Applikationen sowie Wiederherstellungspläne für Citrix-Infrastrukturen.</p></div>
+      <div><strong>Client- und Betriebssystem-Rollouts</strong><p>Windows-10/11-Rollouts auf FAT-Clients und VDIs, einschließlich SCCM-Paketierung, Tasksequenzen, CIS-Härtung und Staging über mehrere Umgebungen.</p></div>
+      <div><strong>Automatisierung mit PowerShell</strong><p>Automatisierung von Bereitstellungs-, Migrations- und Betriebsprozessen, von vollautomatisierten Citrix-Infrastrukturen mit SCCM über Monitoring-Auswertungen (PRTG/SQL) bis zu Skripten für Massenmigrationen.</p></div>
+      <div><strong>Betriebsstabilisierung und Root Cause Analysis</strong><p>Healthchecks, Performance-Reviews und Stabilisierung produktiver Umgebungen in kritischen Phasen, etwa während großer Rollouts im Klinikumfeld.</p></div>
+      <div><strong>Projektleitung und Beratung</strong><p>Technische Teilprojektleitung, Workshop-Moderation und Stakeholder-Abstimmung sowie vollständige Dokumentation und strukturierte Übergabe an den internen Betrieb.</p></div>
+    </div>
+  </section>
+  <section>
+    <h2>Branchenerfahrung</h2>
+    <div class="svc">
+      <div><strong>Versicherungen</strong><p>Mehrere Erst- und Rückversicherer sowie deren IT-Dienstleister.</p></div>
+      <div><strong>Gesundheits- und Sozialwesen</strong><p>Universitätskliniken, Krankenhäuser sowie Träger der Wohlfahrtspflege.</p></div>
+      <div><strong>Öffentliche Verwaltung</strong><p>Kommunal-, Landes- und Bundesbehörden.</p></div>
+      <div><strong>Industrie, Energie und IT-Dienstleister</strong><p>Hausgeräte- und Konsumgüterindustrie, Life Sciences, Energieversorgung sowie IT-Dienstleister.</p></div>
     </div>
   </section>
   <section>
@@ -139,16 +149,22 @@ footer{text-align:center;padding:1.2rem;border-top:1px solid var(--line);color:v
       <li class="s2 c1">M365</li>
       <li class="s2 c2">Migration</li>
       <li class="s3 c1">Virtual Desktop</li>
+      <li class="s1 c2">Entra ID</li>
+      <li class="s1 c1">DaaS</li>
     </ul>
   </section>
   <section>
     <h2>Zertifizierungen</h2>
     <ul>
-      <li>Microsoft Certified: Azure Administrator Associate</li>
       <li>Microsoft Certified: Azure Solutions Architect Expert</li>
+      <li>Microsoft Certified: Azure Administrator Associate</li>
       <li>Microsoft Certified: Azure Virtual Desktop Specialty</li>
-      <li>Citrix Certified Expert – Virtualization</li>
+      <li>Citrix Certified Expert – Virtualization (CCE-V)</li>
       <li>Citrix Virtual Apps and Desktops Service on Citrix Cloud</li>
+      <li>VMware Certified Professional – Data Center Virtualization (VCP-DCV)</li>
+      <li>MCSE: Cloud Platform and Infrastructure</li>
+      <li>MCSE: Server Infrastructure</li>
+      <li>MCSE: Private Cloud</li>
     </ul>
   </section>
   <section>
@@ -162,23 +178,15 @@ footer{text-align:center;padding:1.2rem;border-top:1px solid var(--line);color:v
   <div class="btns">
     <button class="mode" id="imp-btn" type="button" aria-expanded="false" aria-controls="impressum">Impressum anzeigen</button>
     <button class="mode" id="priv-btn" type="button" aria-expanded="false" aria-controls="privacy">Datenschutz</button>
-    <button class="mode" id="game-btn" type="button" aria-expanded="false" aria-controls="gamepanel">Spiel</button>
-  </div>
-  <div class="imp" id="gamepanel" inert>
-    <div>
-      <div class="game-inner">
-        <h2>Byte-Man</h2>
-        <div class="ghud"><span id="gs">Punkte: 0</span><span id="gl">Leben: 3</span></div>
-        <canvas id="cv" width="420" height="420" aria-label="Spielfeld"></canvas>
-        <div class="pad" id="pad">
-          <button class="mode" type="button" data-d="0,-1" aria-label="Hoch">▲</button>
-          <button class="mode" type="button" data-d="-1,0" aria-label="Links">◀</button>
-          <button class="mode" type="button" data-d="0,1" aria-label="Runter">▼</button>
-          <button class="mode" type="button" data-d="1,0" aria-label="Rechts">▶</button>
-        </div>
-        <button class="mode" id="greset" type="button">Neustart</button>
-      </div>
-    </div>
+    <label class="vh" for="game-sel">Browsergame auswählen</label>
+    <select class="mode" id="game-sel">
+      <option value="" selected>Spiel wählen</option>
+      <option value="games/bug-invaders/">Bug Invaders</option>
+      <option value="games/fatman/">FatMan</option>
+      <option value="games/firewall-breaker/">Firewall Breaker</option>
+      <option value="games/towerdefense/">Orbital Defense</option>
+      <option value="games/rasta-man/">Rasta-Man</option>
+    </select>
   </div>
   <div class="imp" id="impressum" inert>
     <div>
@@ -231,6 +239,9 @@ footer{text-align:center;padding:1.2rem;border-top:1px solid var(--line);color:v
         <h3>Cookies und Tracking</h3>
         <p>Diese Website setzt keine Cookies und nutzt keine Analyse- oder Tracking-Dienste. Schriftarten werden nicht von externen Servern geladen.</p>
 
+        <h3>Lokale Speicherung im Browser</h3>
+        <p>Sprach-, Design- und Ton-Einstellungen sowie Highscores der Browsergames werden ausschließlich lokal in deinem Browser gespeichert (localStorage). Diese Daten werden nicht an mich oder Dritte übertragen und dienen nur dazu, deine Einstellungen beim nächsten Besuch beizubehalten. Du kannst sie jederzeit über die Einstellungen deines Browsers löschen.</p>
+
         <h3>Kontaktaufnahme</h3>
         <p>Für Anfragen nutze ich ein Formular von Microsoft Forms. Deine Eingaben werden von Microsoft verarbeitet und mir zur Bearbeitung deiner Anfrage bereitgestellt (Art. 6 Abs. 1 lit. b oder f DSGVO). Es gelten die Datenschutzbestimmungen von Microsoft. Bei Kontakt per E-Mail speichere ich deine Angaben nur zur Bearbeitung und lösche sie, sobald sie nicht mehr erforderlich sind.</p>
 
@@ -240,7 +251,7 @@ footer{text-align:center;padding:1.2rem;border-top:1px solid var(--line);color:v
         <h3>Deine Rechte</h3>
         <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch (Art. 15 bis 21 DSGVO). Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren, z. B. bei <span>der Landesbeauftragten für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)</span>.</p>
 
-        <p style="margin-top:1rem">Stand: <span>01.10.2026</span></p>
+        <p style="margin-top:1rem">Stand: <span>12.10.2026</span></p>
       </div>
     </div>
   </div>
@@ -275,110 +286,9 @@ footer{text-align:center;padding:1.2rem;border-top:1px solid var(--line);color:v
   });
 })();
 (function(){
-  var btn=document.getElementById('game-btn'),panel=document.getElementById('gamepanel'),cv=document.getElementById('cv'),ctx=cv.getContext('2d');
-  var T=28,M=["###############","#.............#","#.##.#.#.#.##.#","#.#.........#.#","#.#.##.#.##.#.#","#.....#.#.....#","#.............#","#.###.....###.#","#.............#","#.....#.#.....#","#.#.##.#.##.#.#","#.#.........#.#","#.##.#.#.#.##.#","#.............#","###############"];
-  var D=[[1,0],[-1,0],[0,1],[0,-1]],GC=['#ff2bd6','#ff8a00','#7cff6b'],GS=[[1,1],[13,1],[7,1]];
-  var map,g,p,gh,raf=0,last=0,isOpen=false,t=0;
-  function ok(c,r){return map[r]&&map[r][c]&&map[r][c]!=='#';}
-  function hud(){document.getElementById('gs').textContent='Punkte: '+g.s;document.getElementById('gl').textContent='Leben: '+g.l;}
-  function reset(){p={c:7,r:11,dx:0,dy:0,p:0,q:null};gh=GS.map(function(s){return{c:s[0],r:s[1],dx:0,dy:0,p:0};});}
-  function init(){map=M.map(function(r){return r.split('');});g={s:0,l:3,d:0,run:false,end:''};map.forEach(function(r){r.forEach(function(ch){if(ch==='.')g.d++;});});reset();hud();}
-  function adv(e,sp,dt,fn){
-    if(e.dx||e.dy){e.p+=sp*dt;while(e.p>=1){e.c+=e.dx;e.r+=e.dy;e.p-=1;fn(e);if(!(e.dx||e.dy)){e.p=0;break;}}}
-    else fn(e);
-  }
-  function pTile(e){
-    if(map[e.r][e.c]==='.'){map[e.r][e.c]=' ';g.s+=10;g.d--;hud();if(!g.d)g.end=window.LANG==='en'?'Cleared!':'Geschafft!';}
-    var q=e.q;if(q&&ok(e.c+q[0],e.r+q[1])){e.dx=q[0];e.dy=q[1];}
-    if((e.dx||e.dy)&&!ok(e.c+e.dx,e.r+e.dy)){e.dx=0;e.dy=0;}
-  }
-  function gTile(e){
-    var o=D.filter(function(d){return ok(e.c+d[0],e.r+d[1]);});
-    var nb=o.filter(function(d){return !(d[0]===-e.dx&&d[1]===-e.dy);});
-    if(nb.length)o=nb;
-    var pc=Math.round(p.c+p.dx*p.p),pr=Math.round(p.r+p.dy*p.p);
-    function dist(d){return Math.abs(e.c+d[0]-pc)+Math.abs(e.r+d[1]-pr);}
-    var pick=Math.random()<.65?o.reduce(function(a,b){return dist(b)<dist(a)?b:a;}):o[Math.random()*o.length|0];
-    e.dx=pick[0];e.dy=pick[1];
-  }
-  function update(dt){
-    if(!g.run||g.end)return;
-    t+=dt;adv(p,4.6,dt,pTile);
-    gh.forEach(function(e){adv(e,3.4,dt,gTile);});
-    var px=p.c+p.dx*p.p,py=p.r+p.dy*p.p;
-    for(var i=0;i<gh.length;i++){
-      var e=gh[i];
-      if(Math.hypot(e.c+e.dx*e.p-px,e.r+e.dy*e.p-py)<.65){
-        g.l--;hud();
-        if(g.l<=0){g.end='Game Over';}else{reset();g.run=false;}
-        break;
-      }
-    }
-  }
-  function draw(){
-    var cs=getComputedStyle(document.documentElement);
-    var n1=cs.getPropertyValue('--neon1').trim(),n2=cs.getPropertyValue('--neon2').trim(),bg=cs.getPropertyValue('--bg').trim(),card=cs.getPropertyValue('--card').trim(),tx=cs.getPropertyValue('--text').trim();
-    ctx.fillStyle=bg;ctx.fillRect(0,0,420,420);
-    ctx.lineWidth=2;
-    for(var r=0;r<15;r++)for(var c=0;c<15;c++){
-      var ch=map[r][c];
-      if(ch==='#'){ctx.fillStyle=card;ctx.fillRect(c*T+3,r*T+3,T-6,T-6);ctx.strokeStyle=n1;ctx.globalAlpha=.7;ctx.strokeRect(c*T+3,r*T+3,T-6,T-6);ctx.globalAlpha=1;}
-      else if(ch==='.'){ctx.fillStyle=tx;ctx.beginPath();ctx.arc(c*T+T/2,r*T+T/2,2.5,0,7);ctx.fill();}
-    }
-    var x=(p.c+p.dx*p.p+.5)*T,y=(p.r+p.dy*p.p+.5)*T,a=Math.atan2(p.dy,p.dx),m=.05+.2*Math.abs(Math.sin(t*12));
-    ctx.shadowBlur=14;ctx.shadowColor='#ffe600';ctx.fillStyle='#ffe600';
-    ctx.beginPath();ctx.moveTo(x,y);ctx.arc(x,y,T*.42,a+m*Math.PI,a+(2-m)*Math.PI);ctx.closePath();ctx.fill();
-    gh.forEach(function(e,i){
-      var gx=(e.c+e.dx*e.p+.5)*T,gy=(e.r+e.dy*e.p+.5)*T,R=T*.4;
-      ctx.shadowColor=GC[i];ctx.fillStyle=GC[i];
-      ctx.beginPath();ctx.arc(gx,gy,R,Math.PI,0);ctx.lineTo(gx+R,gy+R);ctx.lineTo(gx-R,gy+R);ctx.closePath();ctx.fill();
-      ctx.shadowBlur=0;ctx.fillStyle='#fff';
-      ctx.beginPath();ctx.arc(gx-R*.4,gy-R*.1,3.2,0,7);ctx.arc(gx+R*.4,gy-R*.1,3.2,0,7);ctx.fill();
-      ctx.shadowBlur=14;
-    });
-    ctx.shadowBlur=0;
-    if(!g.run||g.end){
-      ctx.fillStyle=bg;ctx.globalAlpha=.8;ctx.fillRect(0,185,420,50);ctx.globalAlpha=1;
-      ctx.fillStyle=n2;ctx.font='20px "Special Elite","Courier New",monospace';ctx.textAlign='center';ctx.textBaseline='middle';
-      ctx.fillText(g.end||(window.LANG==='en'?'Use arrow keys or swipe to start':'Pfeiltasten oder Wischen zum Start'),210,210);
-    }
-  }
-  function loop(ts){var dt=Math.min((ts-last)/1000,.05);last=ts;update(dt);draw();raf=requestAnimationFrame(loop);}
-  function dir(x,y){
-    if(!isOpen||g.end)return;
-    g.run=true;
-    if((p.dx||p.dy)&&p.dx===-x&&p.dy===-y){p.c+=p.dx;p.r+=p.dy;p.p=1-p.p;p.dx=x;p.dy=y;}
-    p.q=[x,y];
-  }
-  document.addEventListener('keydown',function(ev){
-    var m={ArrowUp:[0,-1],ArrowDown:[0,1],ArrowLeft:[-1,0],ArrowRight:[1,0],w:[0,-1],s:[0,1],a:[-1,0],d:[1,0]}[ev.key];
-    if(m&&isOpen){ev.preventDefault();dir(m[0],m[1]);}
-  });
-  document.getElementById('pad').addEventListener('pointerdown',function(ev){
-    var b=ev.target.closest('[data-d]');if(!b)return;
-    ev.preventDefault();var d=b.getAttribute('data-d').split(',');dir(+d[0],+d[1]);
-  });
-  var sx=0,sy=0;
-  cv.addEventListener('touchstart',function(ev){sx=ev.touches[0].clientX;sy=ev.touches[0].clientY;},{passive:true});
-  cv.addEventListener('touchend',function(ev){
-    var dx=ev.changedTouches[0].clientX-sx,dy=ev.changedTouches[0].clientY-sy;
-    if(Math.max(Math.abs(dx),Math.abs(dy))<24)return;
-    if(Math.abs(dx)>Math.abs(dy))dir(dx>0?1:-1,0);else dir(0,dy>0?1:-1);
-  },{passive:true});
-  document.getElementById('greset').addEventListener('click',init);
-  btn.addEventListener('click',function(){
-    isOpen=!isOpen;
-    panel.classList.toggle('open',isOpen);
-    if(isOpen){panel.removeAttribute('inert');}else{panel.setAttribute('inert','');}
-    btn.setAttribute('aria-expanded',isOpen?'true':'false');
-    btn.textContent=isOpen?'Spiel schließen':'Spiel';
-    if(isOpen){
-      last=performance.now();raf=requestAnimationFrame(loop);
-      var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      setTimeout(function(){panel.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});},reduce?0:420);
-    }else{cancelAnimationFrame(raf);}
-  });
-  init();
+  var sel=document.getElementById('game-sel');
+  sel.addEventListener('change',function(){if(sel.value)location.href=sel.value;});
+  window.addEventListener('pageshow',function(){sel.value='';});
 })();
 (function(){
   var btn=document.getElementById('priv-btn'),panel=document.getElementById('privacy');
@@ -430,9 +340,9 @@ footer{text-align:center;padding:1.2rem;border-top:1px solid var(--line);color:v
   }
   var cmds={
     help:function(){line('Befehle: whoami, skills, certs, contact, github, theme, matrix, clear, exit');},
-    whoami:function(){line('Martin Sucker, IT-Consultant für End User Computing');},
-    skills:function(){line('Azure, Citrix, AVD, Windows 365, Intune, SCCM, PowerShell, Automation, M365, Migration, Virtual Desktop');},
-    certs:function(){line('Azure Administrator Associate');line('Azure Solutions Architect Expert');line('Azure Virtual Desktop Specialty');line('Citrix Certified Expert – Virtualization');line('Citrix Virtual Apps and Desktops Service on Citrix Cloud');},
+    whoami:function(){line('Martin Sucker, IT-Consultant für End User Computing und Cloud');},
+    skills:function(){line('Azure, Citrix, AVD, Windows 365, Citrix DaaS, Entra ID, Intune, SCCM, PowerShell, Automation, M365, Migration, Virtual Desktop');},
+    certs:function(){line('Azure Solutions Architect Expert');line('Azure Administrator Associate');line('Azure Virtual Desktop Specialty');line('Citrix Certified Expert – Virtualization (CCE-V)');line('Citrix Virtual Apps and Desktops Service on Citrix Cloud');line('VMware Certified Professional – Data Center Virtualization (VCP-DCV)');line('MCSE: Cloud Platform and Infrastructure, Server Infrastructure, Private Cloud');},
     contact:function(){line('Kontaktformular öffnen',FORMS);},
     github:function(){line('github.com/DerSucker',GH);},
     theme:function(){document.getElementById('mode').click();line('Design gewechselt.');},
@@ -494,18 +404,35 @@ footer{text-align:center;padding:1.2rem;border-top:1px solid var(--line);color:v
 })();
 (function(){
   var EN={
-    'IT-Consultant für End User Computing':'IT Consultant for End User Computing',
+    'IT-Consultant für End User Computing und Cloud':'IT Consultant for End User Computing and Cloud',
     'Kurzprofil':'Profile',
-    'Ich bin IT-Consultant für End User Computing und unterstütze bei Planung und Betrieb moderner Arbeitsplätze. Mein Schwerpunkt liegt auf Microsoft- und Citrix-Technologien, von virtuellen Desktops und Anwendungen bis zur Verwaltung von Endgeräten.':'I am an IT consultant for End User Computing and support the planning and operation of modern workplaces. My focus is on Microsoft and Citrix technologies, from virtual desktops and applications to endpoint management.',
-    'Schwerpunkte':'Focus areas',
-    'Architektur und Design':'Architecture and design',
-    'Konzepte für virtuelle Desktops und Anwendungen mit Azure und Citrix.':'Concepts for virtual desktops and applications with Azure and Citrix.',
-    'Umzug bestehender Umgebungen in die Cloud oder auf neue Plattformen.':'Moving existing environments to the cloud or to new platforms.',
-    'Optimierung und Troubleshooting':'Optimization and troubleshooting',
-    'Analyse von Performance, Anmeldezeiten und Störungen.':'Analysis of performance, logon times and incidents.',
-    'Automatisierung':'Automation',
-    'Wiederkehrende Aufgaben in Bereitstellung und Betrieb automatisieren.':'Automating recurring tasks in provisioning and operations.',
-    'Wissenstransfer zu Microsoft- und Citrix-Themen.':'Knowledge transfer on Microsoft and Citrix topics.',
+    'Ich bin IT-Consultant für End User Computing und Cloud-Infrastrukturen und bringe mehr als 19 Jahre Projekterfahrung mit. Seit 2015 konzipiere, baue und betreibe ich Citrix-Infrastrukturen bei Enterprise-Kunden. In den letzten Jahren habe ich meinen Schwerpunkt konsequent auf Microsoft Azure erweitert, insbesondere auf Cloud-Desktops, hybride Szenarien und IT-Notfallumgebungen.':'I am an IT Consultant for End User Computing and cloud infrastructure with more than 19 years of project experience. Since 2015 I have been designing, building and operating Citrix infrastructures for enterprise customers. In recent years I have consistently extended my focus to Microsoft Azure, especially cloud desktops, hybrid scenarios and IT emergency environments.',
+    'Ich verbinde Architekturverständnis mit hoher Umsetzungsstärke, übernehme Teilprojektleitungen und werde gezielt dort eingesetzt, wo kritische Migrationen oder instabile Umgebungen schnell beherrscht werden müssen.':'I combine architectural understanding with strong delivery skills, take on sub-project lead roles and am brought in specifically where critical migrations or unstable environments need to be brought under control quickly.',
+    'Ich begleite Organisationen auf dem Weg von klassischen On-Premises-Arbeitsplätzen zu sicheren, wirtschaftlichen Cloud-Desktops, von der Strategie bis zum stabilen Betrieb.':'I support organisations on their way from traditional on-premises workplaces to secure, cost-effective cloud desktops, from strategy to stable operations.',
+    'Kernkompetenzen':'Core competencies',
+    'End User Computing und Desktopvirtualisierung':'End user computing and desktop virtualization',
+    'Konzeption, Implementierung und Migration von Citrix-Umgebungen (Virtual Apps and Desktops, DaaS, PVS, WEM, ADC/NetScaler, StoreFront, FAS), von kleinen Standortlösungen bis zu Umgebungen mit mehreren tausend VDIs und Terminalservern.':'Design, implementation and migration of Citrix environments (Virtual Apps and Desktops, DaaS, PVS, WEM, ADC/NetScaler, StoreFront, FAS), from small single-site solutions to environments with several thousand VDIs and terminal servers.',
+    'Cloud-Desktops und Microsoft Azure':'Cloud desktops and Microsoft Azure',
+    'Bewertung und Konzeption von Azure Virtual Desktop, Windows 365 und Citrix Cloud DaaS, inklusive Proofs of Concept, Anbieterevaluierungen und sicherer Architekturen mit Entra ID und Intune.':'Assessment and design of Azure Virtual Desktop, Windows 365 and Citrix Cloud DaaS, including proofs of concept, vendor evaluations and secure architectures with Entra ID and Intune.',
+    'IT-Notfall- und Wiederherstellungskonzepte':'IT emergency and recovery concepts',
+    'Konzeption und Aufbau Azure-basierter Notfallumgebungen, Analyse geschäftskritischer Applikationen sowie Wiederherstellungspläne für Citrix-Infrastrukturen.':'Design and build of Azure-based emergency environments, analysis of business-critical applications and recovery plans for Citrix infrastructures.',
+    'Client- und Betriebssystem-Rollouts':'Client and operating system rollouts',
+    'Windows-10/11-Rollouts auf FAT-Clients und VDIs, einschließlich SCCM-Paketierung, Tasksequenzen, CIS-Härtung und Staging über mehrere Umgebungen.':'Windows 10/11 rollouts on fat clients and VDIs, including SCCM packaging, task sequences, CIS hardening and staging across multiple environments.',
+    'Automatisierung mit PowerShell':'Automation with PowerShell',
+    'Automatisierung von Bereitstellungs-, Migrations- und Betriebsprozessen, von vollautomatisierten Citrix-Infrastrukturen mit SCCM über Monitoring-Auswertungen (PRTG/SQL) bis zu Skripten für Massenmigrationen.':'Automating provisioning, migration and operations processes, from fully automated Citrix infrastructures with SCCM and monitoring analytics (PRTG/SQL) to scripts for mass migrations.',
+    'Betriebsstabilisierung und Root Cause Analysis':'Operational stabilization and root cause analysis',
+    'Healthchecks, Performance-Reviews und Stabilisierung produktiver Umgebungen in kritischen Phasen, etwa während großer Rollouts im Klinikumfeld.':'Health checks, performance reviews and stabilization of production environments in critical phases, for example during large rollouts in hospitals.',
+    'Projektleitung und Beratung':'Project management and consulting',
+    'Technische Teilprojektleitung, Workshop-Moderation und Stakeholder-Abstimmung sowie vollständige Dokumentation und strukturierte Übergabe an den internen Betrieb.':'Technical sub-project lead, workshop facilitation and stakeholder alignment, plus complete documentation and structured handover to internal operations.',
+    'Branchenerfahrung':'Industry experience',
+    'Versicherungen':'Insurance',
+    'Mehrere Erst- und Rückversicherer sowie deren IT-Dienstleister.':'Several primary insurers and reinsurers as well as their IT service providers.',
+    'Gesundheits- und Sozialwesen':'Healthcare and social services',
+    'Universitätskliniken, Krankenhäuser sowie Träger der Wohlfahrtspflege.':'University hospitals, hospitals and welfare organizations.',
+    'Öffentliche Verwaltung':'Public administration',
+    'Kommunal-, Landes- und Bundesbehörden.':'Municipal, state and federal authorities.',
+    'Industrie, Energie und IT-Dienstleister':'Industry, energy and IT services',
+    'Hausgeräte- und Konsumgüterindustrie, Life Sciences, Energieversorgung sowie IT-Dienstleister.':'Home appliance and consumer goods industry, life sciences, energy supply and IT service providers.',
     'Werdegang':'Experience',
     '08/2026 – heute':'08/2026 – present',
     'Themen':'Topics',
@@ -520,9 +447,8 @@ footer{text-align:center;padding:1.2rem;border-top:1px solid var(--line);color:v
     'Impressum ausblenden':'Hide legal notice',
     'Datenschutz':'Privacy policy',
     'Datenschutz ausblenden':'Hide privacy policy',
-    'Spiel':'Game',
-    'Spiel schließen':'Close game',
-    'Neustart':'Restart',
+    'Browsergame auswählen':'Select a browser game',
+    'Spiel wählen':'Choose a game',
     'Impressum':'Legal notice',
     'Angaben gemäß § 5 DDG':'Information pursuant to § 5 DDG',
     'Deutschland':'Germany',
@@ -545,6 +471,8 @@ footer{text-align:center;padding:1.2rem;border-top:1px solid var(--line);color:v
     'Diese Website wird bei GitHub Pages gehostet (GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA). Beim Aufruf verarbeitet der Hoster technisch notwendige Daten, etwa IP-Adresse, Datum und Uhrzeit, aufgerufene Seite und Browsertyp. Das ist nötig, um die Seite auszuliefern (Art. 6 Abs. 1 lit. f DSGVO). Eine Übermittlung in die USA ist möglich. Details stehen in der Datenschutzerklärung von GitHub.':'This website is hosted on GitHub Pages (GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA). When you visit, the host processes technically necessary data such as IP address, date and time, requested page and browser type. This is required to deliver the page (Art. 6(1)(f) GDPR). A transfer to the USA is possible. Details can be found in GitHub\'s privacy statement.',
     'Cookies und Tracking':'Cookies and tracking',
     'Diese Website setzt keine Cookies und nutzt keine Analyse- oder Tracking-Dienste. Schriftarten werden nicht von externen Servern geladen.':'This website does not set cookies and does not use analytics or tracking services. Fonts are not loaded from external servers.',
+    'Lokale Speicherung im Browser':'Local storage in your browser',
+    'Sprach-, Design- und Ton-Einstellungen sowie Highscores der Browsergames werden ausschließlich lokal in deinem Browser gespeichert (localStorage). Diese Daten werden nicht an mich oder Dritte übertragen und dienen nur dazu, deine Einstellungen beim nächsten Besuch beizubehalten. Du kannst sie jederzeit über die Einstellungen deines Browsers löschen.':'Language, theme and sound settings as well as high scores of the browser games are stored only locally in your browser (localStorage). This data is not transmitted to me or to third parties and is only used to keep your settings for your next visit. You can delete it at any time in your browser settings.',
     'Kontaktaufnahme':'Contact requests',
     'Für Anfragen nutze ich ein Formular von Microsoft Forms. Deine Eingaben werden von Microsoft verarbeitet und mir zur Bearbeitung deiner Anfrage bereitgestellt (Art. 6 Abs. 1 lit. b oder f DSGVO). Es gelten die Datenschutzbestimmungen von Microsoft. Bei Kontakt per E-Mail speichere ich deine Angaben nur zur Bearbeitung und lösche sie, sobald sie nicht mehr erforderlich sind.':'For enquiries I use a Microsoft Forms form. Your input is processed by Microsoft and provided to me to handle your request (Art. 6(1)(b) or (f) GDPR). Microsoft\'s privacy terms apply. If you contact me by email, I store your details only to handle your request and delete them once they are no longer required.',
     'Externe Links':'External links',
@@ -553,19 +481,21 @@ footer{text-align:center;padding:1.2rem;border-top:1px solid var(--line);color:v
     'Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch (Art. 15 bis 21 DSGVO). Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren, z. B. bei':'You have the right to access, rectification, erasure, restriction of processing, data portability and objection (Art. 15 to 21 GDPR). You can also lodge a complaint with a data protection supervisory authority, e.g.',
     'der Landesbeauftragten für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)':'the State Commissioner for Data Protection and Freedom of Information of North Rhine-Westphalia (LDI NRW)',
     'Stand:':'Last updated:',
-    '01.10.2026':'1 October 2026',
+    '12.10.2026':'12 October 2026',
     'Byte-Terminal v1.0. Tippe "help".':'Byte-Terminal v1.0. Type "help".',
     'Befehle: whoami, skills, certs, contact, github, theme, matrix, clear, exit':'Commands: whoami, skills, certs, contact, github, theme, matrix, clear, exit',
-    'Martin Sucker, IT-Consultant für End User Computing':'Martin Sucker, IT Consultant for End User Computing',
+    'Martin Sucker, IT-Consultant für End User Computing und Cloud':'Martin Sucker, IT Consultant for End User Computing and Cloud',
     'Kontaktformular öffnen':'Open contact form',
     'Design gewechselt.':'Theme switched.',
     '[sudo] Passwort für recruiter: ********':'[sudo] password for recruiter: ********',
     'Zugriff gewährt. Gute Entscheidung.':'Access granted. Good choice.',
     'recruiter ist nicht in der sudoers-Datei. Dieser Vorfall wird gemeldet.':'recruiter is not in the sudoers file. This incident will be reported.'
   };
+  var ARIA={'Design wechseln':'Switch theme','Terminal schließen':'Close terminal','Befehl':'Command'};
   var DE={};for(var k in EN)DE[EN[k]]=k;
-  var RE=[[/^Punkte: (\d+)$/,'Score: $1'],[/^Leben: (\d+)$/,'Lives: $1'],[/^Befehl nicht gefunden: (.*)\. Tippe "help"\.$/,'Command not found: $1. Type "help".']];
-  var RD=[[/^Score: (\d+)$/,'Punkte: $1'],[/^Lives: (\d+)$/,'Leben: $1']];
+  var ARIA_DE={};for(var a in ARIA)ARIA_DE[ARIA[a]]=a;
+  var RE=[[/^Befehl nicht gefunden: (.*)\. Tippe "help"\.$/,'Command not found: $1. Type "help".']];
+  var RD=[];
   var lang='de',btn=document.getElementById('lang');
   function tr(n,map,rx){
     var raw=n.nodeValue,s=raw.replace(/\s+/g,' ').trim();
@@ -588,8 +518,10 @@ footer{text-align:center;padding:1.2rem;border-top:1px solid var(--line);color:v
   }).observe(document.body,{childList:true,subtree:true,characterData:true});
   function setLang(l){
     lang=l;window.LANG=l;document.documentElement.lang=l;
-    document.title=l==='en'?'Martin Sucker – IT Consultant End User Computing':'Martin Sucker – IT-Consultant End User Computing';
+    document.title=l==='en'?'Martin Sucker – IT Consultant End User Computing & Cloud':'Martin Sucker – IT-Consultant End User Computing & Cloud';
     walk(document.body,l==='en'?EN:DE,l==='en'?RE:RD);
+    var am=l==='en'?ARIA:ARIA_DE;
+    document.querySelectorAll('[aria-label]').forEach(function(el){var v=am[el.getAttribute('aria-label')];if(v)el.setAttribute('aria-label',v);});
     btn.textContent=l==='en'?'Deutsch':'English';
     try{localStorage.setItem('lang',l);}catch(e){}
   }

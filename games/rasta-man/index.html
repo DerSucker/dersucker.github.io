@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rasta-Man – Games – Martin Sucker</title>
+<meta name="description" content="Rasta-Man: ein Jump-and-Run-Browsergame durch zehn Orte auf Jamaika.">
+<meta name="author" content="Martin Sucker">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.martinsucker.de/games/rasta-man/">
+<meta name="theme-color" content="#0a0c14">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0c14'/%3E%3Crect x='10' y='14' width='44' height='8' fill='%23e8322b'/%3E%3Crect x='10' y='22' width='44' height='8' fill='%23ffd21f'/%3E%3Crect x='10' y='30' width='44' height='8' fill='%2322b04b'/%3E%3Ctext x='32' y='56' font-family='Courier New,monospace' font-size='18' font-weight='bold' text-anchor='middle' fill='%2300f0ff'%3ERM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="mode" href="https://www.martinsucker.de/" aria-label="Startseite" data-ta="backAria">← <span class="dom" data-t="back">Startseite</span></a>
+    <span class="grow"></span>
+    <button class="mode" id="mode" type="button" aria-label="Design wechseln" data-ta="themeAria">☀ Lightmode</button><button class="mode" id="lang" type="button" aria-label="Sprache wechseln / Switch language">English</button>
+  </div>
+
+  <header>
+    <h1>Rasta-Man<span class="cursor" aria-hidden="true"></span></h1>
+    <p class="role" data-t="role">Jump &amp; Run durch zehn Orte auf Jamaika</p>
+  </header>
+
+  <section class="game-sec">
+    <div class="game-shell" id="shell">
+      <canvas id="cv" width="1280" height="720" aria-label="Spielfeld Rasta-Man" data-ta="canvasAria" tabindex="0"></canvas>
+      <div class="touch" id="touch" aria-hidden="true">
+        <div class="tleft">
+          <div class="dpad" id="dpad"><span>◀</span><span>▶</span></div>
+        </div>
+        <div class="tright">
+          <div class="tsys"><button type="button" class="tbtn small" data-k="fs">⛶</button><button type="button" class="tbtn small" data-k="pause">❚❚</button></div>
+          <button type="button" class="tbtn" data-k="throw">🍪</button>
+          <button type="button" class="tbtn big" data-k="jump">▲</button>
+        </div>
+      </div>
+      <p class="rotate" id="rotate" data-t="rotate">Bitte Gerät quer halten ↻</p>
+    </div>
+    <div class="bar">
+      <button class="mode" id="b-start" type="button">▶ Start</button>
+      <button class="mode" id="b-pause" type="button">❚❚ Pause</button>
+      <button class="mode" id="b-sound" type="button" aria-pressed="true">♫ Sound an</button>
+      <button class="mode" id="b-fs" type="button">⛶ Vollbild</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cheatcode</h2>
+    <p class="muted" data-t="cheatInfo">Ab Level 2 wird am Levelanfang ein Code angezeigt. Damit startest du beim nächsten Mal direkt dort.</p>
+    <form class="cheat" id="cheat" autocomplete="off">
+      <input id="cheat-in" type="text" maxlength="16" placeholder="CODE" aria-label="Cheatcode" autocapitalize="characters" spellcheck="false">
+      <button class="mode" type="submit" data-t="go">Los</button>
+    </form>
+    <p class="msg" id="cheat-msg" aria-live="polite"></p>
+  </section>
+
+  <section>
+    <h2 data-t="hControls">Steuerung</h2>
+    <div class="svc">
+      <div><strong data-t="cRun">Laufen</strong><p data-t="cRunD">← → oder A / D</p></div>
+      <div><strong data-t="cJump">Springen / Fliegen</strong><p data-t="cJumpD">Leertaste, ↑ oder W (gedrückt halten = höher)</p></div>
+      <div><strong data-t="cThrow">Cookie werfen</strong><p data-t="cThrowD">X, K oder Shift</p></div>
+      <div><strong data-t="cSys">Pause / Sound / Vollbild</strong><p data-t="cSysD">P bzw. Esc / M / F</p></div>
+      <div><strong>Smartphone</strong><p data-t="cMobD">Eingeblendete Tasten. Im Vollbild liegen sie über dem Spiel.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-t="hItems">Items &amp; Gegner</h2>
+    <div class="svc">
+      <div><strong data-t="iLeaf">Hanfblatt</strong><p data-t="iLeafD">Sammeln. 50 Hanfblätter = 1 Extraleben.</p></div>
+      <div><strong>Joint</strong><p data-t="iJointD">10 Sekunden fliegen: Sprungtaste gedrückt halten.</p></div>
+      <div><strong>Cookie</strong><p data-t="iCookieD">5 Cookies zum Werfen auf Gegner.</p></div>
+      <div><strong data-t="iPlant">Hanfpflanze</strong><p data-t="iPlantD">10 Sekunden unbesiegbar.</p></div>
+      <div><strong class="warn" data-t="iBeer">Bier</strong><p data-t="iBeerD">PowerDown: 3 Sekunden kotzen und bewegungsunfähig.</p></div>
+      <div><strong data-t="iStone">Steinblöcke</strong><p data-t="iStoneD">Von unten zertrümmern. Manche verstecken Items.</p></div>
+      <div><strong data-t="iCop">Polizei</strong><p data-t="iCopD">Einfacher Gegner. Draufspringen!</p></div>
+      <div><strong data-t="iPol">Politiker</strong><p data-t="iPolD">Mittlerer Gegner. Wirft mit Büchern.</p></div>
+    </div>
+  </section>
+</div>
+<footer>
+  <div>by Martin Sucker | <a href="https://github.com/DerSucker" target="_blank" rel="noopener">github.com/DerSucker</a></div>
+  <div class="btns"><a class="mode" href="https://www.martinsucker.de/"><span data-t="legal">Impressum &amp; Datenschutz</span></a></div>
+</footer>
+<script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Firewall Breaker – Games – Martin Sucker</title>
+<meta name="description" content="Firewall Breaker: ein Breakout-Browsergame mit Firewall-Blöcken, Power-ups und Endgegner.">
+<meta name="author" content="Martin Sucker">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.martinsucker.de/games/firewall-breaker/">
+<meta name="theme-color" content="#0a0c14">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0c14'/%3E%3Crect x='8' y='10' width='22' height='10' fill='%23ff2bd6'/%3E%3Crect x='34' y='10' width='22' height='10' fill='%2300f0ff'/%3E%3Crect x='8' y='24' width='22' height='10' fill='%2300f0ff'/%3E%3Crect x='34' y='24' width='22' height='10' fill='%23ff2bd6'/%3E%3Ccircle cx='32' cy='44' r='5' fill='%23ffffff'/%3E%3Crect x='16' y='52' width='32' height='6' rx='3' fill='%2300f0ff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="mode" href="https://www.martinsucker.de/" aria-label="Startseite" data-ta="backAria">← <span class="dom" data-t="back">Startseite</span></a>
+    <span class="grow"></span>
+    <button class="mode" id="mode" type="button" aria-label="Design wechseln" data-ta="themeAria">☀ Lightmode</button><button class="mode" id="lang" type="button" aria-label="Sprache wechseln / Switch language">English</button>
+  </div>
+
+  <header>
+    <h1>Firewall Breaker<span class="cursor" aria-hidden="true"></span></h1>
+    <p class="role" data-t="role">Durchbrich die Firewall – Block für Block</p>
+  </header>
+
+  <section class="game-sec">
+    <div class="game-shell" id="shell">
+      <div class="stage">
+        <canvas id="cv" width="960" height="1280" aria-label="Spielfeld Firewall Breaker" data-ta="canvasAria" tabindex="0"></canvas>
+        <form class="cheat-ov" id="cheat" autocomplete="off">
+          <input id="cheat-in" type="text" maxlength="12" placeholder="CHEATCODE" aria-label="Cheatcode" autocapitalize="characters" spellcheck="false">
+          <button class="mode" type="submit" data-t="go">OK</button>
+          <p class="cheat-msg" id="cheat-msg" aria-live="polite"></p>
+        </form>
+      </div>
+      <div class="touch" id="touch" aria-hidden="true">
+        <div class="dpad" id="dpad"><span>◀</span><span>▶</span></div>
+        <div class="tright">
+          <div class="tsys"><button type="button" class="tbtn small" data-k="fs">⛶</button><button type="button" class="tbtn small" data-k="pause">❚❚</button></div>
+          <button type="button" class="tbtn big" data-k="launch">▲</button>
+        </div>
+      </div>
+    </div>
+    <div class="bar">
+      <button class="mode" id="b-start" type="button">▶ Start</button>
+      <button class="mode" id="b-pause" type="button">❚❚ Pause</button>
+      <button class="mode" id="b-sound" type="button" aria-pressed="true">♫ Ton an</button>
+      <button class="mode" id="b-fs" type="button">⛶ Vollbild</button>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-t="hControls">Steuerung</h2>
+    <div class="svc">
+      <div><strong data-t="cMove">Paddle bewegen</strong><p data-t="cMoveD">← → oder A / D, alternativ die Maus</p></div>
+      <div><strong data-t="cLaunch">Ball starten</strong><p data-t="cLaunchD">Leertaste oder Mausklick</p></div>
+      <div><strong data-t="cSys">Pause / Ton / Vollbild</strong><p data-t="cSysD">P bzw. Esc / M / F</p></div>
+      <div><strong>Smartphone</strong><p data-t="cMobD">Auf dem Spielfeld wischen oder ◀ ▶ benutzen. Tippen startet den Ball.</p></div>
+      <div><strong>Cheatcode</strong><p data-t="cCheatD">Ab Level 2 am Levelanfang angezeigt. Eingabe auf dem Startbildschirm.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-t="hBricks">Firewall-Blöcke</h2>
+    <div class="svc">
+      <div><strong data-t="bNormal">Normal</strong><p data-t="bNormalD">1 Treffer.</p></div>
+      <div><strong data-t="bHard">Gehärtet</strong><p data-t="bHardD">2–3 Treffer, bekommt sichtbare Risse.</p></div>
+      <div><strong data-t="bMetal">Metall</strong><p data-t="bMetalD">Unzerstörbar.</p></div>
+      <div><strong class="warn" data-t="bBoom">Explosiv</strong><p data-t="bBoomD">Reißt alle Nachbarsteine mit.</p></div>
+      <div><strong data-t="bBoss">Master-Firewall</strong><p data-t="bBossD">Endgegner in Level 5. Bewegt sich und baut Steine nach.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Power-ups</h2>
+    <div class="svc">
+      <div><strong>M · Multiball</strong><p data-t="pMultiD">Zwei zusätzliche Datenpakete.</p></div>
+      <div><strong data-t="pWide">W · Breites Paddle</strong><p data-t="pWideD">Das Kabel wird länger.</p></div>
+      <div><strong>L · Laser</strong><p data-t="pLaserD">Feuert automatisch nach oben.</p></div>
+      <div><strong data-t="pSticky">C · Klebe-Paddle</strong><p data-t="pStickyD">Ball bleibt hängen, Start per Leertaste oder Tippen.</p></div>
+      <div><strong data-t="pSlow">S · Zeitlupe</strong><p data-t="pSlowD">Ball wird langsamer.</p></div>
+      <div><strong data-t="pLife">+ · Extraleben</strong><p data-t="pLifeD">Ein Leben mehr.</p></div>
+      <div><strong class="warn" data-t="pNarrow">N · Schmales Paddle</strong><p data-t="pNarrowD">Negativ: Das Kabel schrumpft.</p></div>
+    </div>
+  </section>
+</div>
+<footer>
+  <div>by Martin Sucker | <a href="https://github.com/DerSucker" target="_blank" rel="noopener">github.com/DerSucker</a></div>
+  <div class="btns"><a class="mode" href="https://www.martinsucker.de/"><span data-t="legal">Impressum &amp; Datenschutz</span></a></div>
+</footer>
+<script src="game.js"></script>
+</body>
+</html>

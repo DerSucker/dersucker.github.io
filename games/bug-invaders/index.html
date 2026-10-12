@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bug Invaders – Browsergame | Martin Sucker</title>
+<meta name="description" content="Bug Invaders: ein Space-Invaders-Remake im Browser. Patche Bugs, Viren, Würmer und Trojaner – 5 Level mit Endgegner.">
+<meta name="author" content="Martin Sucker">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.martinsucker.de/games/bug-invaders/">
+<meta name="theme-color" content="#0a0c14">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0c14'/%3E%3Cellipse cx='32' cy='36' rx='13' ry='15' fill='%237cff6b'/%3E%3Ccircle cx='32' cy='19' r='7' fill='%237cff6b'/%3E%3Cpath d='M19 30h-8M19 38h-9M20 46h-7M45 30h8M45 38h9M44 46h7M28 13l-4-6M36 13l4-6' stroke='%237cff6b' stroke-width='3'/%3E%3Cpath d='M32 22v28' stroke='%230a0c14' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="mode" href="https://www.martinsucker.de/" aria-label="Startseite" data-i18n-aria="backAria">← <span class="dom" data-i18n="back">Startseite</span></a>
+    <span class="grow"></span>
+    <button class="mode" id="mode" type="button" aria-label="Design wechseln" data-i18n-aria="themeAria">☀ Lightmode</button>
+    <button class="mode" id="lang" type="button" aria-label="Sprache wechseln / Switch language">English</button>
+  </div>
+
+  <header>
+    <h1>Bug Invaders<span class="cursor" aria-hidden="true"></span></h1>
+    <p class="role" data-i18n="subtitle">Ein Remake von Space Invaders: Patche die Bugs, bevor sie dein Netzwerk erreichen.</p>
+  </header>
+
+  <section class="game-sec">
+    <!-- Game window: everything inside #stage goes fullscreen -->
+    <div class="stage" id="stage">
+      <div class="hud">
+        <span><span data-i18n="score">Punkte</span>: <b id="hs">0</b></span>
+        <span><span data-i18n="level">Level</span>: <b id="hl">1</b>/5</span>
+        <span><span data-i18n="lives">Leben</span>: <b id="hv">3</b></span>
+        <span><span data-i18n="best">Rekord</span>: <b id="hb">0</b></span>
+      </div>
+
+      <div class="board" id="board">
+        <canvas id="cv" width="420" height="560" aria-label="Spielfeld" data-i18n-aria="board"></canvas>
+
+        <div class="ov" id="ov-title">
+          <h3>Bug Invaders</h3>
+          <p data-i18n="intro">Patche alle Bugs, Viren, Würmer und Trojaner – bevor sie unten ankommen!</p>
+          <label class="cheat">
+            <span data-i18n="cheatLabel">Cheatcode (optional)</span>
+            <input id="cheat" type="text" maxlength="16" autocomplete="off" autocapitalize="characters" spellcheck="false" data-i18n-ph="cheatPh" placeholder="z. B. CODE">
+          </label>
+          <p class="msg" id="cheat-msg" aria-live="polite"></p>
+          <button class="mode big" id="start" type="button" data-i18n="start">Spiel starten</button>
+          <p class="hint" data-i18n="startHint">Enter / Leertaste zum Starten</p>
+        </div>
+
+        <div class="ov" id="ov-pause" hidden>
+          <h3 data-i18n="paused">Pause</h3>
+          <button class="mode big" id="resume" type="button" data-i18n="resume">Weiter</button>
+        </div>
+
+        <div class="ov" id="ov-end" hidden>
+          <h3 id="end-title">Game Over</h3>
+          <p id="end-text"></p>
+          <button class="mode big" id="again" type="button" data-i18n="again">Nochmal spielen</button>
+        </div>
+      </div>
+
+      <div class="pads" id="pads">
+        <div class="pad-l">
+          <button class="mode" type="button" data-k="left" aria-label="Links" data-i18n-aria="left">◀</button>
+          <button class="mode" type="button" data-k="right" aria-label="Rechts" data-i18n-aria="right">▶</button>
+        </div>
+        <div class="pad-r">
+          <button class="mode fire" type="button" data-k="fire" data-i18n="fire">Feuer</button>
+        </div>
+      </div>
+
+      <div class="ctrls">
+        <button class="mode" id="b-pause" type="button">⏸ Pause</button>
+        <button class="mode" id="b-sound" type="button">♪ Ton an</button>
+        <button class="mode" id="b-fs" type="button">⛶ Vollbild</button>
+        <button class="mode" id="b-restart" type="button" data-i18n="restart">↺ Neustart</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="howTo">So wird gespielt</h2>
+    <div class="svc">
+      <div><strong data-i18n="ctrlTitle">Steuerung</strong><p data-i18n="ctrlText">PC/Mac: Pfeiltasten oder A/D zum Bewegen, Leertaste zum Feuern. P = Pause, M = Ton, F = Vollbild. Smartphone: Buttons Links, Rechts und Feuer – oder den Finger auf dem Spielfeld ziehen (feuert automatisch).</p></div>
+      <div><strong data-i18n="goalTitle">Ziel</strong><p data-i18n="goalText">Patche jede Welle, bevor sie unten ankommt. Die Firewalls schützen dich, zerfallen aber bei jedem Treffer. In Level 5 wartet die Ransomware. Ab 10.000 Punkten gibt es ein Extraleben.</p></div>
+      <div><strong data-i18n="cheatTitle">Cheatcodes</strong><p data-i18n="cheatText">Zu Beginn jedes Levels ab Level 2 wird ein Cheatcode angezeigt. Gib ihn beim nächsten Mal vor dem Start ein, um direkt in diesem Level zu beginnen.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="legend">Legende</h2>
+    <ul class="legend">
+      <li><canvas class="ico" data-ico="player" width="40" height="40" aria-hidden="true"></canvas><span data-i18n="lgPlayer">Admin – das bist du</span></li>
+      <li><canvas class="ico" data-ico="B" width="40" height="40" aria-hidden="true"></canvas><span data-i18n="lgBug">Bug – 10 Punkte</span></li>
+      <li><canvas class="ico" data-ico="V" width="40" height="40" aria-hidden="true"></canvas><span data-i18n="lgVirus">Virus – 20 Punkte</span></li>
+      <li><canvas class="ico" data-ico="W" width="40" height="40" aria-hidden="true"></canvas><span data-i18n="lgWorm">Wurm – 30 Punkte</span></li>
+      <li><canvas class="ico" data-ico="T" width="40" height="40" aria-hidden="true"></canvas><span data-i18n="lgTrojan">Trojaner – 40 Punkte</span></li>
+      <li><canvas class="ico" data-ico="zd" width="40" height="40" aria-hidden="true"></canvas><span data-i18n="lgZero">Zero-Day – 50 bis 300 Punkte</span></li>
+      <li><canvas class="ico" data-ico="boss" width="40" height="40" aria-hidden="true"></canvas><span data-i18n="lgBoss">Ransomware – Endgegner in Level 5</span></li>
+      <li><canvas class="ico" data-ico="triple" width="40" height="40" aria-hidden="true"></canvas><span data-i18n="lgTriple">Dreifachschuss – 10 Sekunden</span></li>
+      <li><canvas class="ico" data-ico="shield" width="40" height="40" aria-hidden="true"></canvas><span data-i18n="lgShield">Schild – fängt einen Treffer ab</span></li>
+      <li><canvas class="ico" data-ico="slow" width="40" height="40" aria-hidden="true"></canvas><span data-i18n="lgSlow">Zeitlupe – Gegner halb so schnell</span></li>
+    </ul>
+  </section>
+</div>
+
+<footer>
+  <div>by Martin Sucker | <a href="https://github.com/DerSucker" target="_blank" rel="noopener">github.com/DerSucker</a></div>
+  <div class="btns"><a class="mode" href="https://www.martinsucker.de/" data-i18n="home">Startseite · Impressum · Datenschutz</a></div>
+</footer>
+
+<script src="game.js"></script>
+</body>
+</html>
