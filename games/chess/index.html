@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Schach – Games – Martin Sucker</title>
+<meta name="description" content="Schach im Browser: zu zweit am selben Gerät oder gegen Stockfish in 8 Spielstufen.">
+<meta name="author" content="Martin Sucker">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.martinsucker.de/games/chess/">
+<meta name="theme-color" content="#0a0c14">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0c14'/%3E%3Crect x='8' y='8' width='12' height='12' fill='%2300f0ff'/%3E%3Crect x='32' y='8' width='12' height='12' fill='%2300f0ff'/%3E%3Crect x='20' y='20' width='12' height='12' fill='%2300f0ff'/%3E%3Crect x='44' y='20' width='12' height='12' fill='%2300f0ff'/%3E%3Cpath d='M22 56h20l-3-8 3-4-4-2 2-12h-4l-3 4-3-4h-4l2 12-4 2 3 4z' fill='%23ff2bd6'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="lib/pieces.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="mode" href="https://www.martinsucker.de/" aria-label="Startseite" data-ta="backAria">← <span class="dom" data-t="back">Startseite</span></a>
+    <span class="grow"></span>
+    <button class="mode" id="mode" type="button" aria-label="Design wechseln" data-ta="themeAria">☀ Lightmode</button><button class="mode" id="lang" type="button" aria-label="Sprache wechseln / Switch language">English</button>
+  </div>
+
+  <header>
+    <h1 data-t="h1">Schach<span class="cursor" aria-hidden="true"></span></h1>
+    <p class="role" data-t="role">Zu zweit am selben Gerät oder gegen Stockfish</p>
+  </header>
+
+  <section class="game-sec">
+    <div class="game-shell" id="shell">
+      <div class="stage" id="stage">
+        <div class="pinfo" id="info-top"><span class="pname" id="name-top"></span><span class="caps" id="caps-top"></span></div>
+        <div class="board-wrap" id="bwrap">
+          <div class="board" id="board" tabindex="0" aria-label="Schachbrett" data-ta="boardAria"></div>
+          <div class="ghost pc" id="ghost" hidden></div>
+
+          <!-- Startmenü -->
+          <div class="ov" id="ov-menu">
+            <div class="ov-box">
+              <p class="ov-title" data-t="menuTitle">Neues Spiel</p>
+              <div class="seg" role="group" aria-label="Modus" data-ta="modeAria">
+                <button type="button" class="opt" data-mode="ai" data-t="modeAi">Gegen Computer</button>
+                <button type="button" class="opt" data-mode="pvp" data-t="modePvp">2 Spieler</button>
+              </div>
+              <div class="ai-only">
+                <p class="lbl" data-t="lblLevel">Level</p>
+                <div class="seg lv" id="lv-sel"></div>
+                <p class="lv-name" id="lv-name"></p>
+                <p class="lbl" data-t="lblColor">Deine Farbe</p>
+                <div class="seg" role="group">
+                  <button type="button" class="opt" data-color="w" data-t="white">Weiß</button>
+                  <button type="button" class="opt" data-color="b" data-t="black">Schwarz</button>
+                  <button type="button" class="opt" data-color="r" data-t="random">Zufall</button>
+                </div>
+              </div>
+              <div class="pvp-only">
+                <p class="lbl" data-t="lblFlip">Brett nach jedem Zug drehen</p>
+                <div class="seg" role="group">
+                  <button type="button" class="opt" data-flip="1" data-t="on">An</button>
+                  <button type="button" class="opt" data-flip="0" data-t="off">Aus</button>
+                </div>
+              </div>
+              <div class="ov-btns">
+                <button type="button" class="mode hot" id="m-start" data-t="startGame">▶ Spiel starten</button>
+                <button type="button" class="mode" id="m-resume" data-t="resumeGame" hidden>↻ Fortsetzen</button>
+              </div>
+              <form class="cheat" id="cheat" autocomplete="off">
+                <input id="cheat-in" type="text" maxlength="12" placeholder="CHEATCODE" aria-label="Cheatcode" autocapitalize="characters" spellcheck="false">
+                <button class="mode" type="submit" data-t="go">OK</button>
+                <p class="cheat-msg" id="cheat-msg" aria-live="polite"></p>
+              </form>
+            </div>
+          </div>
+
+          <!-- Levelstart, Spielende, Hinweise -->
+          <div class="ov" id="ov-msg" hidden>
+            <div class="ov-box">
+              <p class="ov-title" id="msg-title"></p>
+              <p class="ov-sub" id="msg-sub"></p>
+              <p class="ov-code" id="msg-code" hidden></p>
+              <div class="ov-btns" id="msg-btns"></div>
+            </div>
+          </div>
+
+          <!-- Bauernumwandlung -->
+          <div class="ov" id="ov-promo" hidden>
+            <div class="ov-box">
+              <p class="ov-title" data-t="promoTitle">Umwandeln in</p>
+              <div class="promo" id="promo"></div>
+            </div>
+          </div>
+        </div>
+        <div class="pinfo" id="info-bot"><span class="pname" id="name-bot"></span><span class="caps" id="caps-bot"></span></div>
+        <p class="status" id="status" aria-live="polite"></p>
+      </div>
+      <div class="touch" id="touch">
+        <button type="button" class="tbtn" data-k="menu" aria-label="Menü" data-ta="menuAria">☰</button>
+        <button type="button" class="tbtn" data-k="undo" aria-label="Zug zurück" data-ta="undoAria">↶</button>
+        <button type="button" class="tbtn" data-k="flip" aria-label="Brett drehen" data-ta="flipAria">⇅</button>
+        <button type="button" class="tbtn" data-k="hint" aria-label="Tipp" data-ta="hintAria">✦</button>
+        <button type="button" class="tbtn" data-k="fs" aria-label="Vollbild" data-ta="fsAria">⛶</button>
+      </div>
+    </div>
+    <div class="bar">
+      <button class="mode" id="b-menu" type="button" data-t="bMenu">☰ Menü</button>
+      <button class="mode" id="b-undo" type="button" data-t="bUndo">↶ Zug zurück</button>
+      <button class="mode" id="b-flip" type="button" data-t="bFlip">⇅ Drehen</button>
+      <button class="mode" id="b-hint" type="button" data-t="bHint">✦ Tipp</button>
+      <button class="mode" id="b-resign" type="button" data-t="bResign">⚑ Aufgeben</button>
+      <button class="mode" id="b-sound" type="button" aria-pressed="true">♫ Ton an</button>
+      <button class="mode" id="b-fs" type="button">⛶ Vollbild</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="moves-head">
+      <h2 data-t="hMoves">Züge</h2>
+      <button class="mode" id="b-pgn" type="button" data-t="bPgn">⧉ PGN kopieren</button>
+    </div>
+    <ol class="moves" id="moves"></ol>
+    <p class="muted" id="moves-empty" data-t="noMoves">Noch keine Züge.</p>
+  </section>
+
+  <section>
+    <h2 data-t="hControls">Steuerung</h2>
+    <div class="svc">
+      <div><strong data-t="cMouse">Maus / Finger</strong><p data-t="cMouseD">Figur antippen und Zielfeld antippen oder die Figur ziehen.</p></div>
+      <div><strong data-t="cKeys">Tastatur</strong><p data-t="cKeysD">Pfeiltasten bewegen den Rahmen, Enter oder Leertaste wählt aus, Esc bricht ab.</p></div>
+      <div><strong data-t="cSys">Funktionen</strong><p data-t="cSysD">U Zug zurück · R Brett drehen · H Tipp · N Menü · M Ton · F Vollbild</p></div>
+      <div><strong>Smartphone</strong><p data-t="cMobD">Die Tasten unter dem Brett: Menü, Zug zurück, Drehen, Tipp und Vollbild.</p></div>
+      <div><strong>Cheatcode</strong><p data-t="cCheatD">Ab Level 2 am Levelanfang angezeigt. Eingabe im Menü.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-t="hLevels">Level</h2>
+    <p class="muted" data-t="levelsIntro">Der Computergegner ist die Schach-Engine Stockfish. Wer ein Level gewinnt, schaltet das nächste frei.</p>
+    <div class="svc" id="lv-list"></div>
+  </section>
+
+  <section>
+    <h2 data-t="hCredits">Verwendete Software</h2>
+    <div class="svc">
+      <div><strong>Stockfish 11 (stockfish.js)</strong><p data-t="crSf">Schach-Engine, als WebAssembly von Nathan Rugg. Lizenz: GPLv3.</p><p><a href="https://github.com/nmrugg/stockfish.js" target="_blank" rel="noopener">github.com/nmrugg/stockfish.js</a></p></div>
+      <div><strong>chess.js</strong><p data-t="crCj">Regeln und Zuggenerierung von Jeff Hlywa. Lizenz: BSD-2-Clause.</p><p><a href="https://github.com/jhlywa/chess.js" target="_blank" rel="noopener">github.com/jhlywa/chess.js</a></p></div>
+      <div><strong data-t="crPcT">Figuren „cburnett“</strong><p data-t="crPc">Von Colin M. L. Burnett, aus lichess chessground. Lizenz: GPLv2+.</p><p><a href="https://github.com/lichess-org/chessground" target="_blank" rel="noopener">github.com/lichess-org/chessground</a></p></div>
+    </div>
+  </section>
+</div>
+<footer>
+  <div>by Martin Sucker | <a href="https://github.com/DerSucker" target="_blank" rel="noopener">github.com/DerSucker</a></div>
+  <div class="btns"><a class="mode" href="https://www.martinsucker.de/"><span data-t="legal">Impressum &amp; Datenschutz</span></a></div>
+</footer>
+<script type="module" src="game.js"></script>
+</body>
+</html>

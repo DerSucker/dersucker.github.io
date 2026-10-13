@@ -1,4 +1,4 @@
-/* Firewall Breaker – Breakout-Remake
+/* Firewall Breaker – Retro-Ballspiel
    by Martin Sucker | github.com/DerSucker | www.martinsucker.de
    Reines HTML/CSS/JS für GitHub Pages, keine externen Abhängigkeiten. */
 (function () {
@@ -28,7 +28,7 @@
       legal: 'Impressum & Datenschutz', themeAria: 'Design wechseln', canvasAria: 'Spielfeld Firewall Breaker', langBtn: 'English',
       start: '▶ Start', restart: '↺ Neustart', pause: '❚❚ Pause', resume: '▶ Weiter', soundOn: '♫ Ton an', soundOff: '♫ Ton aus', fs: '⛶ Vollbild', fsOff: '⛶ Vollbild beenden',
       badCode: 'Unbekannter Code.', loaded: 'Level {n} geladen.',
-      sub: 'Ein Breakout gegen die Firewall', hs: 'Highscore', keyStart: 'Leertaste = Start', tapStart: 'Tippen = Start', cheatLbl: 'Cheatcode:',
+      sub: 'Ein Retro-Ballspiel gegen die Firewall', hs: 'Highscore', keyStart: 'Leertaste = Start', tapStart: 'Tippen = Start', cheatLbl: 'Cheatcode:',
       score: 'Punkte', level: 'Level', lives: 'Leben', codeFor: 'Cheatcode für dieses Level:', getReady: 'Bereit machen…',
       keyLaunch: 'Leertaste / Klick = Ball starten', tapLaunch: 'Tippen = Ball starten', pauseT: 'Pause', keyResume: 'P oder Esc zum Weiterspielen', tapResume: 'Tippen zum Weiterspielen',
       clear: 'Firewall durchbrochen!', over: 'Verbindung getrennt', win: 'Zugriff gewährt!', winSub: 'Die Master-Firewall ist gefallen.',
@@ -52,7 +52,7 @@
       legal: 'Legal notice & privacy', themeAria: 'Switch theme', canvasAria: 'Firewall Breaker game screen', langBtn: 'Deutsch',
       start: '▶ Start', restart: '↺ Restart', pause: '❚❚ Pause', resume: '▶ Resume', soundOn: '♫ Sound on', soundOff: '♫ Sound off', fs: '⛶ Fullscreen', fsOff: '⛶ Exit fullscreen',
       badCode: 'Unknown code.', loaded: 'Level {n} loaded.',
-      sub: 'A breakout against the firewall', hs: 'High score', keyStart: 'Space = start', tapStart: 'Tap = start', cheatLbl: 'Cheat code:',
+      sub: 'A retro ball game against the firewall', hs: 'High score', keyStart: 'Space = start', tapStart: 'Tap = start', cheatLbl: 'Cheat code:',
       score: 'Score', level: 'Level', lives: 'Lives', codeFor: 'Cheat code for this level:', getReady: 'Get ready…',
       keyLaunch: 'Space / click = launch ball', tapLaunch: 'Tap = launch ball', pauseT: 'Pause', keyResume: 'P or Esc to resume', tapResume: 'Tap to resume',
       clear: 'Firewall breached!', over: 'Connection lost', win: 'Access granted!', winSub: 'The Master Firewall has fallen.',

@@ -1,4 +1,4 @@
-/* FatMan – a Pac-Man remake | by Martin Sucker | github.com/DerSucker | www.martinsucker.de */
+/* FatMan – a retro maze game | by Martin Sucker | github.com/DerSucker | www.martinsucker.de */
 (function () {
   'use strict';
 
@@ -143,7 +143,7 @@
       light: '☀ Lightmode', dark: '☾ Darkmode', themeAria: 'Design wechseln',
       back: 'Startseite', backAria: 'Startseite',
       docTitle: 'FatMan – Browsergame | Martin Sucker',
-      subtitle: 'Ein Remake von Pac-Man: Burger futtern, Ärzten ausweichen.',
+      subtitle: 'Ein Retro-Labyrinthspiel: Burger futtern, Ärzten ausweichen.',
       score: 'Punkte', level: 'Level', lives: 'Leben', best: 'Rekord', board: 'Spielfeld',
       intro: 'Iss alle Burger – aber lass dich nicht von den Ärzten erwischen!',
       cheatLabel: 'Cheatcode (optional)', cheatPh: 'z. B. CODE',
@@ -171,7 +171,7 @@
       light: '☀ Light mode', dark: '☾ Dark mode', themeAria: 'Switch theme',
       back: 'Home', backAria: 'Home',
       docTitle: 'FatMan – Browser Game | Martin Sucker',
-      subtitle: 'A Pac-Man remake: munch burgers, dodge doctors.',
+      subtitle: 'A retro maze game: munch burgers, dodge doctors.',
       score: 'Score', level: 'Level', lives: 'Lives', best: 'Best', board: 'Game board',
       intro: 'Eat every burger – but don’t let the doctors catch you!',
       cheatLabel: 'Cheat code (optional)', cheatPh: 'e.g. CODE',

@@ -1,4 +1,4 @@
-/* Bug Invaders – a Space Invaders remake | by Martin Sucker | github.com/DerSucker | www.martinsucker.de */
+/* Bug Invaders – a retro shooter | by Martin Sucker | github.com/DerSucker | www.martinsucker.de */
 (function () {
   'use strict';
 
@@ -33,7 +33,7 @@
       light: '☀ Lightmode', dark: '☾ Darkmode', themeAria: 'Design wechseln',
       back: 'Startseite', backAria: 'Startseite',
       docTitle: 'Bug Invaders – Browsergame | Martin Sucker',
-      subtitle: 'Ein Remake von Space Invaders: Patche die Bugs, bevor sie dein Netzwerk erreichen.',
+      subtitle: 'Ein Retro-Shooter: Patche die Bugs, bevor sie dein Netzwerk erreichen.',
       score: 'Punkte', level: 'Level', lives: 'Leben', best: 'Rekord', board: 'Spielfeld',
       intro: 'Patche alle Bugs, Viren, Würmer und Trojaner – bevor sie unten ankommen!',
       cheatLabel: 'Cheatcode (optional)', cheatPh: 'z. B. CODE',
@@ -65,7 +65,7 @@
       light: '☀ Light mode', dark: '☾ Dark mode', themeAria: 'Switch theme',
       back: 'Home', backAria: 'Home',
       docTitle: 'Bug Invaders – Browser Game | Martin Sucker',
-      subtitle: 'A Space Invaders remake: patch the bugs before they reach your network.',
+      subtitle: 'A retro shooter: patch the bugs before they reach your network.',
       score: 'Score', level: 'Level', lives: 'Lives', best: 'Best', board: 'Game board',
       intro: 'Patch every bug, virus, worm and trojan – before they reach the bottom!',
       cheatLabel: 'Cheat code (optional)', cheatPh: 'e.g. CODE',
